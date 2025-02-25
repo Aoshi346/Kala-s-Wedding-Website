@@ -1,0 +1,381 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background-image: url('../Images/fondo_crema.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Montserrat', cursive;
+    color: #4a4a4a;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand, .nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    color: #FF69B4 !important;
+}
+
+/* Website Logo */
+.website-logo {
+    height: 40px; /* Adjust the height as needed */
+    width: auto;
+    margin-right: 10px; /* Add some spacing between the logo and text */
+    vertical-align: middle; /* Align the logo vertically with the text */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.9) !important;
+    }
+
+    .website-logo {
+        height: 30px; /* Adjust the height for mobile */
+    }
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('../Images/hero_pag_web.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Countdown Section */
+.countdown-section {
+    background-color: #f8f9fa;
+}
+
+.countdown-font {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+.countdown-text {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.wedding-date {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+/* Historia Section */
+#historia {
+    background-color: #f8f9fa;
+}
+
+/* Detalles Section */
+.song-request-box {
+    background-color: rgba(255, 192, 203, 0.15); /* Light pink with 15% opacity */
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+    transition: all 0.3s ease;
+}
+
+.song-request-box:hover {
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+    transform: translateY(-5px);
+}
+
+.song-request-box input {
+    border: 1px solid #FF69B4; /* Hot pink border */
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.song-request-box input:focus {
+    border-color: #FF69B4; /* Hot pink border on focus */
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5); /* Pink shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+.media-controls button {
+    margin: 0 10px;
+    background-color: #FF69B4; /* Hot pink */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.media-controls button:hover {
+    background-color: #FF1493; /* Deep pink */
+    transform: scale(1.1);
+}
+
+.additional-icons i {
+    font-size: 1.8rem;
+    margin: 0 15px;
+    color: #FF69B4; /* Hot pink */
+    transition: all 0.3s ease;
+}
+
+.additional-icons i:hover {
+    color: #FF1493; /* Deep pink */
+    transform: scale(1.2);
+}
+
+/* Attire Section */
+.attire-box {
+    transition: transform 0.3s ease;
+}
+
+.attire-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Ubicacion Section */
+#mapaceremonia, #maparecepcion {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #000; /* Add a black border */
+}
+
+.btn-map {
+    background-color: #228B22;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-map:hover {
+    background-color: #185418;
+    color: #fff;
+}
+
+/* General Timeline Styles */
+.timeline {
+    position: relative;
+    max-width: 600px; /* Keeping the max-width as is */
+    margin: 0 auto;
+    padding: 10px 0; /* Keeping the padding as is */
+}
+
+.timeline-item {
+    padding: 5px 0; /* Keeping the padding as is */
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-content {
+    position: relative;
+    text-align: center;
+    margin-top: 20px; /* Keeping the margin as is */
+}
+
+.icon {
+    width: 100px; /* Increased icon size */
+    height: 100px; /* Increased icon size */
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -50px; /* Adjusted top position */
+    left: 50%;
+    transform: translateY(-50%);
+}
+
+.icon img {
+    width: 100%;
+    height: auto;
+}
+
+.time {
+    font-weight: bold;
+    color: #333;
+    font-size: 16px; /* Increased font size */
+}
+
+.event {
+    font-size: 20px; /* Increased font size */
+    font-weight: bold;
+    margin: 10px 0; /* Increased margin */
+}
+
+/* PC Timeline Styles */
+.timeline-pc::after {
+    content: "";
+    position: absolute;
+    width: 2px; /* Keeping the line width as is */
+    background-color: #000000;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-pc .timeline-item {
+    margin-bottom: 20px; /* Keeping the margin as is */
+}
+
+.timeline-pc .timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 20px; /* Increased dot size */
+    height: 20px; /* Increased dot size */
+    background-color: #000000;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.timeline-pc .timeline-item:nth-child(odd)::before {
+    left: 300px; /* Keeping the position as is */
+}
+
+.timeline-pc .timeline-item:nth-child(even)::before {
+    left: calc(100% - 300px); /* Keeping the position as is */
+}
+
+.timeline-pc .timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 10px; /* Keeping the padding as is */
+}
+
+.timeline-pc .timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 10px; /* Keeping the padding as is */
+}
+
+.timeline-pc .timeline-item:nth-child(odd) .icon {
+    left: calc(50% - 10px); /* Keeping the position as is */
+    transform: translateX(-50%);
+}
+
+.timeline-pc .timeline-item:nth-child(even) .icon {
+    left: calc(50% + 10px); /* Keeping the position as is */
+    transform: translateX(-50%);
+}
+
+/* Mobile Timeline Styles */
+.timeline-mobile {
+    display: none;
+}
+
+.timeline-mobile .timeline-item {
+    width: 100%;
+    padding-left: 90px;
+    padding-right: 20px;
+}
+
+.timeline-mobile::after {
+    left: 40px;
+}
+
+.timeline-mobile .icon {
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+}
+
+/* RSVP Section Styles */
+#confirmacion {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+
+#confirmacion h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4a4a4a;
+}
+
+#confirmacion p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+#rsvp-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#rsvp-form .form-group {
+    margin-bottom: 20px;
+}
+
+#rsvp-form .form-control {
+    border-radius: 50px;
+    padding: 10px 15px;
+    border: 1px solid #FF69B4; /* Hot pink border */
+    transition: all 0.3s ease;
+}
+
+#rsvp-form .form-control:focus {
+    border-color: #FF69B4; /* Hot pink border on focus */
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5); /* Pink shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+#rsvp-form button {
+    background-color: #FF69B4; /* Hot pink */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+#rsvp-form button:hover {
+    background-color: #FF1493; /* Deep pink */
+    transform: scale(1.1);
+}
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .timeline-pc {
+        display: block;
+    }
+
+    .timeline-mobile {
+        display: none;
+    }
+}
+
+/* Additional Styles */
+.timeline p {
+    margin: 10px 0 0; /* Increased margin */
+    font-size: 16px; /* Increased font size */
+    color: #666;
+}

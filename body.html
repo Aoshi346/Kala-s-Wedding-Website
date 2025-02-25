@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Boda Kala y Jose</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="CSS/estilo_body.css"> <!-- Link to the new CSS file -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pinyon+Script&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- Leaflet JS -->
+        <script src="JS/nombre_usuario_personalizado.js" defer></script> <!-- Link to the personalized name JS file -->
+        <script src="JS/ubicacion.js" defer></script> <!-- Link to the map initialization JS file -->
+        <script src="JS/contador.js" defer></script> <!-- Link to the countdown JS file -->
+        <script src="JS/intersection_observer.js"></script>
+    </head>
+    </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="../Images/sello_con_monograma.png" alt="Website Logo" class="website-logo">
+            Boda Kala y Jose
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#bienvenida">Bienvenida</a></li>
+                <li class="nav-item"><a class="nav-link" href="#historia">Nuestra Historia</a></li>
+                <li class="nav-item"><a class="nav-link" href="#detalles">Detalles de la Boda</a></li>
+                <li class="nav-item"><a class="nav-link" href="#ubicacion">Ubicacion</a></li>
+                <li class="nav-item"><a class="nav-link" href="#confirmacion">Asistencia</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="hero text-center text-white d-flex align-items-center justify-content-center">
+    </div>
+    <section id="bienvenida" class="countdown-section py-5">
+        <div class="container text-center">
+            <h2>Bienvenido <span id='personalized-name'></span></h2>
+            <p>Estamos emocionados de compartir este dia tan especial contigo! Ya solo faltan:</p>
+            <div class="row">
+                <div class="col countdown-item">
+                    <span id="days" class="countdown-font"></span>
+                    <span class="countdown-text">DIAS</span>
+                </div>
+                <div class="col countdown-item">
+                    <span id="hours" class="countdown-font"></span>
+                    <span class="countdown-text">HORAS</span>
+                </div>
+                <div class="col countdown-item">
+                    <span id="minutes" class="countdown-font"></span>
+                    <span class="countdown-text">MINUTOS</span>
+                </div>
+                <div class="col countdown-item">
+                    <span id="seconds" class="countdown-font"></span>
+                    <span class="countdown-text">SEGUNDOS</span>
+                </div>
+            </div>
+            <p class="wedding-date mt-3">La boda se celebrará el 21 de Junio de 2025</p>
+        </div>
+    </section>
+    <section id="historia" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Nuestra Historia</h2>
+            <p>Después de más de nueve años juntos, hemos compartido innumerables aventuras, risas, logros y momentos inolvidables. Cada paso que hemos dado nos ha llevado a este día tan especial. Hoy, con gran alegría, queremos compartir con ustedes, nuestros queridos familiares y amigos —las personas más importantes en nuestras vidas— este nuevo capítulo que hemos esperado con tanto anhelo: nuestro matrimonio eclesiástico. ¡Únete a nosotros para celebrar nuestra unión!</p>
+        </div>
+    </section>
+    <section id="detalles" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Detalles de la Boda</h2>
+            <p class="text-center">Toda la informacion que necesites sobre el dia de nuestra boda.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="song-request-box card shadow-sm text-center">
+                        <div class="card-body">
+                            <img src="../Images/foto2.jpg" class="img-fluid mb-3" alt="Album Cover" style="max-height: 200px;">
+                            <p class="card-text">Que cancion no puede faltar?</p>
+                            <input type="text" id="song-input" class="form-control mb-2" placeholder="Ingresa el nombre de la cancion">
+                            <div class="media-controls">
+                                <button id="prev-btn" class="btn btn-outline-primary"><i class="fas fa-step-backward"></i></button>
+                                <button id="play-btn" class="btn btn-primary"><i class="fas fa-play"></i></button>
+                                <button id="next-btn" class="btn btn-outline-primary"><i class="fas fa-step-forward"></i></button>
+                            </div>
+                            <div class="additional-icons mt-3">
+                                <i class="bi bi-headphones"></i>
+                                <i class="bi bi-heart-fill"></i>
+                                <i class="bi bi-share-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="attire" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Ejemplos de Atuendo</h2>
+            <p class="text-center">Aqui tienes algunos ejemplos de atuendos apropiados para nuestra boda.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="attire-box p-3 mb-3 bg-white rounded shadow-sm text-center">
+                        <img src="path/to/attire1.jpg" class="img-fluid mb-3" alt="Ejemplo 1">
+                        <p>Formal</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="attire-box p-3 mb-3 bg-white rounded shadow-sm text-center">
+                        <img src="path/to/attire2.jpg" class="img-fluid mb-3" alt="Ejemplo 2">
+                        <p>Semi-Formal</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="attire-box p-3 mb-3 bg-white rounded shadow-sm text-center">
+                        <img src="path/to/attire3.jpg" class="img-fluid mb-3" alt="Ejemplo 3">
+                        <p>Casual Elegante</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>Para más ideas de atuendos, visita nuestro album:</p>
+                <a href="https://www.pinterest.com/yourpinterestlink" class="btn btn-danger" target="_blank">
+                    <i class="fab fa-pinterest"></i> Visita aqui
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="ubicacion" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Ubicación</h2>
+            <p class="text-center">Aquí puedes ver la ubicación de la ceremonia y la recepción.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="text-center">Ceremonia</h3>
+                    <div id="mapaceremonia" style="height: 400px;"></div>
+                    <div class="text-center mt-3">
+                        <a href="https://www.google.com/maps/place/Iglesia+de+Santa+Ana/@10.4283333,-66.8080556,15z/data=!4m14!1m7!3m6!1s0x8c2af81fd8ccef47:0x265aabbf724da27e!2sIglesia+de+Santa+Ana!8m2!3d10.4283333!4d-66.8080556!16s%2Fg%2F1hdz2lv4f!3m5!1s0x8c2af81fd8ccef47:0x265aabbf724da27e!8m2!3d10.4283333!4d-66.8080556!16s%2Fg%2F1hdz2lv4f?hl=es-us&entry=ttu&g_ep=EgoyMDI1MDExMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+                            <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-center">Recepción</h3>
+                    <div id="maparecepcion" style="height: 400px;"></div>
+                    <div class="text-center mt-3">
+                        <a href="https://www.google.com/maps/place/Quinta+Samambaya/@10.4107617,-66.8686363,17.51z/data=!4m6!3m5!1s0x8c2af65879fed52d:0x2e1a6dff72aac453!8m2!3d10.4109401!4d-66.8669586!16s%2Fg%2F11c0vlkb1x?entry=ttu&g_ep=EgoyMDI1MDExMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">
+                            <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="timeline" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Cronograma de la Boda</h2>
+            <p class="text-center">Aquí está el cronograma del día de nuestra boda.</p>
+            <div class="timeline timeline-pc">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">03:00 PM</div>
+                        <div class="event">Ceremonia</div>
+                        <p>Iglesia Santa Ana</p>
+                    </div>
+                    <div class="icon">
+                        <img src="../Images/icono_ceremonia.png" alt="ceremonia Icon">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">05:30 PM</div>
+                        <div class="event">Recepción</div>
+                        <p>Casa Samambaya</p>
+                    </div>
+                    <div class="icon">
+                        <img src="../Images/icono_recepcion.png" alt="Recepcion Icon">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">06:30 PM</div>
+                        <div class="event">Brindis</div>
+                    </div>
+                    <div class="icon">
+                        <img src="../Images/icono_brindis.png" alt="Brindis Icon">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">07:00 PM</div>
+                        <div class="event">Primer Baile</div>
+                    </div>
+                    <div class="icon">
+                        <img src="../Images/icono_baile.png" alt="Baile Icon">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">08:00 PM</div>
+                        <div class="event">Cena</div>
+                    </div>
+                    <div class="icon">
+                        <img src="../Images/icono_cena.png" alt="Cena Icon">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">09:00 PM</div>
+                        <div class="event">Fiesta</div>
+                    </div>
+                    <div class="icon">
+                        <img src="../Images/icono_fiesta.png" alt="Fiesta Icon">
+                    </div>
+                </div>
+            </div>
+            <section id="confirmacion" class="py-5 bg-light">
+                <div class="container text-center">
+                    <h2>Asistencia</h2>
+                    <p>Por favor dejanos saber si podras asistir!</p>
+                    <form id="rsvp-form" class="text-left">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre completo" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="attendance">Asistirás?</label>
+                            <select class="form-control" id="attendance" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="yes">Sí, asistiré</option>
+                                <option value="no">No, no podré asistir</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="plus-one-group" style="display: none;">
+                            <label for="plus-one">Nombre del Acompañante</label>
+                            <input type="text" class="form-control" id="plus-one" placeholder="Ingresa el nombre del acompañante">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

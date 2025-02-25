@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Bienvenidos!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/estilo_login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Average+Sans&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="JS/login_validacion.js"></script>
+</head>
+<body class="d-flex align-items-center justify-content-center vh-100">
+    <div class="loading-container"></div>
+    <div class="login-container fade-in text-center p-4 rounded shadow">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <h1 class="slide-in mb-3">Bienvenidos a la invitación de Kalany & Jose</h1>
+        <p class="slide-in mb-4">Por favor coloca tu clave de usuario para disfrutar de la experiencia</p>
+        <form onsubmit="event.preventDefault(); validarUsuario();" class="mb-3">
+            <div class="form-group">
+                <input type="text" id="nombreusuario" placeholder="Usuario" class="form-control fade-in">
+            </div>
+            <button type="submit" class="btn btn-primary fade-in">Ingresar</button>
+        </form>
+        <div id="alert" class="fade-in"></div>
+    </div>
+</body>
+</html>

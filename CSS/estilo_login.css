@@ -1,0 +1,229 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.average-sans-regular {
+    font-family: "Average Sans", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.red-hat-display-normal {
+    font-family: "Red Hat Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    font-family: "Red Hat Display", serif;
+    background: url('../Images/background_kala.png') no-repeat center center fixed;
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Use relative units for width */
+    max-width: 400px; /* Set a maximum width */
+    text-align: center;
+    border: none; /* Remove border */
+    position: relative; /* For positioning petals */
+    overflow: hidden; /* Prevent petals from overflowing */
+}
+
+.login-container h1, .login-container p, .login-container form, .login-container #alert {
+    z-index: 3; /* Ensure these elements are above the petals */
+    position: relative; /* Ensure z-index is applied */
+}
+
+.login-container h1 {
+    font-family: 'Red Hat Display', serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-container p {
+    font-family: 'Red Hat Display', serif;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Rounded corners */
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container input:focus {
+    border-color: #ff69b4; 
+    box-shadow: 0 0 8px rgba(255, 105, 180, 0.5); 
+    outline: none; 
+}
+
+.login-container button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    background-color: #ff69b4; 
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #ff1493; /* Darker pink on hover */
+    box-shadow: 0 4px 8px rgba(255, 20, 147, 0.3); 
+}
+
+.petal {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('../Images/peonia.png') no-repeat center center;
+    background-size: contain;
+    animation: fall 5s linear infinite;
+    opacity: 0;
+    z-index: 1; /* Ensure petals are behind elements */
+}
+
+.petal:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.petal:nth-child(2) {
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.petal:nth-child(3) {
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.petal:nth-child(4) {
+    left: 40%;
+    animation-delay: 3s;
+}
+
+.petal:nth-child(5) {
+    left: 50%;
+    animation-delay: 4s;
+}
+
+.petal:nth-child(6) {
+    left: 60%;
+    animation-delay: 5s;
+}
+
+.petal:nth-child(7) {
+    left: 70%;
+    animation-delay: 6s;
+}
+
+.petal:nth-child(8) {
+    left: 80%;
+    animation-delay: 7s;
+}
+
+.petal:nth-child(9) {
+    left: 90%;
+    animation-delay: 8s;
+}
+
+.fade-in, .slide-in, form, #alert {
+    z-index: 2; /* Ensure elements are above petals */
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 1s ease-in-out;
+}
+
+#alert {
+    display: none; /* Hidden initially */
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#alert.show {
+    display: block; 
+}
+
+/* Responsive design for smaller devices */
+@media (max-width: 600px) {
+    .login-container {
+        width: 100%; 
+        padding: 20px; 
+    }
+
+    .login-container h1 {
+        font-size: 1.5em; 
+    }
+
+    .login-container p {
+        font-size: 1em; 
+    }
+
+    .login-container input, .login-container button {
+        font-size: 0.9em; 
+    }
+}

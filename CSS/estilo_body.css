@@ -111,14 +111,14 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 
-/* Historia Section */
+/* Historia */
 #historia {
     background-color: #f8f9fa;
 }
 
-/* Detalles Section */
+/* Detalles */
 .song-request-box {
-    background-color: rgba(255, 192, 203, 0.15); /* Light pink with 15% opacity */
+    background-color: rgba(255, 192, 203, 0.15); 
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 30px;
@@ -132,21 +132,21 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .song-request-box input {
-    border: 1px solid #FF69B4; /* Hot pink border */
+    border: 1px solid #FF69B4; 
     padding: 10px 15px;
     border-radius: 50px;
     transition: all 0.3s ease;
 }
 
 .song-request-box input:focus {
-    border-color: #FF69B4; /* Hot pink border on focus */
-    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5); /* Pink shadow on focus */
-    outline: none; /* Remove default outline */
+    border-color: #FF69B4; 
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5); 
+    outline: none;
 }
 
 .media-controls button {
     margin: 0 10px;
-    background-color: #FF69B4; /* Hot pink */
+    background-color: #FF69B4; 
     border: none;
     color: white;
     padding: 10px 15px;
@@ -155,23 +155,23 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .media-controls button:hover {
-    background-color: #FF1493; /* Deep pink */
+    background-color: #FF1493; 
     transform: scale(1.1);
 }
 
 .additional-icons i {
     font-size: 1.8rem;
     margin: 0 15px;
-    color: #FF69B4; /* Hot pink */
+    color: #FF69B4; 
     transition: all 0.3s ease;
 }
 
 .additional-icons i:hover {
-    color: #FF1493; /* Deep pink */
+    color: #FF1493; 
     transform: scale(1.2);
 }
 
-/* Attire Section */
+/* Ropa */
 .attire-box {
     transition: transform 0.3s ease;
 }
@@ -180,11 +180,11 @@ h1, h2, h3, h4, h5, h6, p {
     transform: translateY(-5px);
 }
 
-/* Ubicacion Section */
+/* Ubicacion y GPS */
 #mapaceremonia, #maparecepcion {
     border-radius: 10px;
     overflow: hidden;
-    border: 2px solid #000; /* Add a black border */
+    border: 2px solid #000; 
 }
 
 .btn-map {
@@ -198,16 +198,16 @@ h1, h2, h3, h4, h5, h6, p {
     color: #fff;
 }
 
-/* General Timeline Styles */
+/* Timeline */
 .timeline {
     position: relative;
-    max-width: 600px; /* Keeping the max-width as is */
+    max-width: 600px; 
     margin: 0 auto;
-    padding: 10px 0; /* Keeping the padding as is */
+    padding: 10px 0; 
 }
 
 .timeline-item {
-    padding: 5px 0; /* Keeping the padding as is */
+    padding: 5px 0; 
     position: relative;
     background-color: inherit;
     width: 50%;
@@ -219,17 +219,17 @@ h1, h2, h3, h4, h5, h6, p {
 .timeline-content {
     position: relative;
     text-align: center;
-    margin-top: 20px; /* Keeping the margin as is */
+    margin-top: 20px; 
 }
 
 .icon {
-    width: 100px; /* Increased icon size */
-    height: 100px; /* Increased icon size */
+    width: 100px; 
+    height: 100px; 
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: -50px; /* Adjusted top position */
+    top: -50px; 
     left: 50%;
     transform: translateY(-50%);
 }
@@ -242,20 +242,20 @@ h1, h2, h3, h4, h5, h6, p {
 .time {
     font-weight: bold;
     color: #333;
-    font-size: 16px; /* Increased font size */
+    font-size: 16px; 
 }
 
 .event {
-    font-size: 20px; /* Increased font size */
+    font-size: 20px; 
     font-weight: bold;
-    margin: 10px 0; /* Increased margin */
+    margin: 10px 0; 
 }
 
-/* PC Timeline Styles */
+/* Timeline en PC */
 .timeline-pc::after {
     content: "";
     position: absolute;
-    width: 2px; /* Keeping the line width as is */
+    width: 2px;
     background-color: #000000;
     top: 0;
     bottom: 0;
@@ -264,14 +264,14 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .timeline-pc .timeline-item {
-    margin-bottom: 20px; /* Keeping the margin as is */
+    margin-bottom: 20px; 
 }
 
 .timeline-pc .timeline-item::before {
     content: "";
     position: absolute;
-    width: 20px; /* Increased dot size */
-    height: 20px; /* Increased dot size */
+    width: 20px; 
+    height: 20px; 
     background-color: #000000;
     border-radius: 50%;
     top: 50%;
@@ -279,34 +279,34 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .timeline-pc .timeline-item:nth-child(odd)::before {
-    left: 300px; /* Keeping the position as is */
+    left: 300px; 
 }
 
 .timeline-pc .timeline-item:nth-child(even)::before {
-    left: calc(100% - 300px); /* Keeping the position as is */
+    left: calc(100% - 300px); 
 }
 
 .timeline-pc .timeline-item:nth-child(odd) {
     left: 0;
-    padding-right: 10px; /* Keeping the padding as is */
+    padding-right: 10px; 
 }
 
 .timeline-pc .timeline-item:nth-child(even) {
     left: 50%;
-    padding-left: 10px; /* Keeping the padding as is */
+    padding-left: 10px; /
 }
 
 .timeline-pc .timeline-item:nth-child(odd) .icon {
-    left: calc(50% - 10px); /* Keeping the position as is */
+    left: calc(50% - 10px); 
     transform: translateX(-50%);
 }
 
 .timeline-pc .timeline-item:nth-child(even) .icon {
-    left: calc(50% + 10px); /* Keeping the position as is */
+    left: calc(50% + 10px); 
     transform: translateX(-50%);
 }
 
-/* Mobile Timeline Styles */
+/* Timeline en Movil */
 .timeline-mobile {
     display: none;
 }
@@ -327,7 +327,7 @@ h1, h2, h3, h4, h5, h6, p {
     transform: translate(-50%, -50%);
 }
 
-/* RSVP Section Styles */
+/* Asistencia/Rsvp */
 #confirmacion {
     background-color: #f8f9fa;
     padding: 50px 0;
@@ -357,18 +357,18 @@ h1, h2, h3, h4, h5, h6, p {
 #rsvp-form .form-control {
     border-radius: 50px;
     padding: 10px 15px;
-    border: 1px solid #FF69B4; /* Hot pink border */
+    border: 1px solid #FF69B4; 
     transition: all 0.3s ease;
 }
 
 #rsvp-form .form-control:focus {
-    border-color: #FF69B4; /* Hot pink border on focus */
-    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5); /* Pink shadow on focus */
-    outline: none; /* Remove default outline */
+    border-color: #FF69B4; 
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5); 
+    outline: none; 
 }
 
 #rsvp-form button {
-    background-color: #FF69B4; /* Hot pink */
+    background-color: #FF69B4; 
     border: none;
     color: white;
     padding: 10px 20px;
@@ -377,13 +377,13 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 #rsvp-form button:hover {
-    background-color: #FF1493; /* Deep pink */
+    background-color: #FF1493; 
     transform: scale(1.1);
 }
 
 
 
-/* Responsive Design */
+/* Responsividad */
 @media screen and (max-width: 768px) {
     .timeline-pc {
         display: block;
@@ -394,9 +394,9 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
-/* Additional Styles */
+/*  Estilos Ad. */
 .timeline p {
-    margin: 10px 0 0; /* Increased margin */
-    font-size: 16px; /* Increased font size */
+    margin: 10px 0 0; 
+    font-size: 16px; 
     color: #666;
 }

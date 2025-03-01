@@ -1,8 +1,8 @@
-/* General Styles */
+/* Estilos Basicos */
 body {
     font-family: 'Montserrat', sans-serif;
     color: #333;
-    background-image: url('../Images/fondo_crema.jpg');
+    background-image: url('Images/fondo_crema.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
 }
 
-/* Countdown Section */
+/* Contador */
 .countdown-section {
     background-color: #f8f9fa;
 }
@@ -89,6 +89,27 @@ h1, h2, h3, h4, h5, h6, p {
     font-weight: bold;
     color: #4a4a4a;
 }
+
+/* Responsividad para dip. moviles */
+@media screen and (max-width: 768px) {
+    /* Reducimos tamano de fuente para dip. moviles */
+    .countdown-font {
+        font-size: 1.5rem; 
+    }
+
+    .countdown-text {
+        font-size: 0.7rem; 
+    }
+
+    .wedding-date {
+        font-size: 1rem; 
+    }
+
+    .countdown-item {
+        margin-bottom: 20px; 
+    }
+}
+
 
 /* Historia Section */
 #historia {

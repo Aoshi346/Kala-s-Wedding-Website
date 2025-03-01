@@ -116,6 +116,15 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: #f8f9fa;
 }
 
+#historiaCarousel {
+    margin-top: 20px;
+}
+
+#historiaCarousel .carousel-item img {
+    max-height: 500px;
+    object-fit: cover;
+}
+
 /* Detalles */
 .song-request-box {
     background-color: rgba(255, 192, 203, 0.15); 

@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6, p {
     transform: translateY(0);
 }
 
-/* Navbar Styles */
+/* Estilo de la Navbar */
 .navbar {
     background-color: rgba(0, 0, 0, 0.7) !important;
     transition: background-color 0.3s ease;
@@ -36,28 +36,28 @@ h1, h2, h3, h4, h5, h6, p {
     color: #FF69B4 !important;
 }
 
-/* Website Logo */
+/* Logo del navbar */
 .website-logo {
-    height: 40px; /* Adjust the height as needed */
+    height: 40px; 
     width: auto;
-    margin-right: 10px; /* Add some spacing between the logo and text */
-    vertical-align: middle; /* Align the logo vertically with the text */
+    margin-right: 10px; 
+    vertical-align: middle; 
 }
 
-/* Responsive Design */
+/* Responsividad  */
 @media screen and (max-width: 768px) {
     .navbar {
         background-color: rgba(0, 0, 0, 0.9) !important;
     }
 
     .website-logo {
-        height: 30px; /* Adjust the height for mobile */
+        height: 30px; /* se ajusta la altura para dipositivos moviles*/
     }
 }
 
-/* Hero Section */
+/* Seccion del hero */
 .hero {
-    background-image: url('../Images/hero_pag_web.png');
+    background-image: url('Images/hero_pag_web.png');
     background-size: cover;
     background-position: center;
     height: 100vh;

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('personalized-name').textContent = username;
     }
 
-    // Countdown logic
+    // Logica del contador indicando el tiempo que queda para la boda
     const daysElement = document.getElementById('days');
     const hoursElement = document.getElementById('hours');
     const minutesElement = document.getElementById('minutes');

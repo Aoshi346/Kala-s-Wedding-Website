@@ -88,65 +88,6 @@
             </div>
         </section>
     </section>
-    <section id="detalles" class="py-5">
-        <div class="container">
-            <h2 class="text-center">Detalles de la Boda</h2>
-            <p class="text-center">Toda la informacion que necesites sobre el dia de nuestra boda.</p>
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6">
-                    <div class="song-request-box card shadow-sm text-center">
-                        <div class="card-body">
-                            <img src="notfound.jpg" class="img-fluid mb-3" alt="Album Cover" style="max-height: 200px;">
-                            <p class="card-text">Que cancion no puede faltar?</p>
-                            <input type="text" id="song-input" class="form-control mb-2" placeholder="Ingresa el nombre de la cancion">
-                            <div class="media-controls">
-                                <button id="prev-btn" class="btn btn-outline-primary"><i class="fas fa-step-backward"></i></button>
-                                <button id="play-btn" class="btn btn-primary"><i class="fas fa-play"></i></button>
-                                <button id="next-btn" class="btn btn-outline-primary"><i class="fas fa-step-forward"></i></button>
-                            </div>
-                            <div class="additional-icons mt-3">
-                                <i class="bi bi-headphones"></i>
-                                <i class="bi bi-heart-fill"></i>
-                                <i class="bi bi-share-fill"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="attire" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center">Ejemplos de Atuendo</h2>
-            <p class="text-center">Aqui tienes algunos ejemplos de atuendos apropiados para nuestra boda.</p>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="attire-box p-3 mb-3 bg-white rounded shadow-sm text-center">
-                        <img src="path/to/attire1.jpg" class="img-fluid mb-3" alt="Ejemplo 1">
-                        <p>Formal</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="attire-box p-3 mb-3 bg-white rounded shadow-sm text-center">
-                        <img src="path/to/attire2.jpg" class="img-fluid mb-3" alt="Ejemplo 2">
-                        <p>Semi-Formal</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="attire-box p-3 mb-3 bg-white rounded shadow-sm text-center">
-                        <img src="path/to/attire3.jpg" class="img-fluid mb-3" alt="Ejemplo 3">
-                        <p>Casual Elegante</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-4">
-                <p>Para más ideas de atuendos, visita nuestro album:</p>
-                <a href="https://www.pinterest.com/yourpinterestlink" class="btn btn-danger" target="_blank">
-                    <i class="fab fa-pinterest"></i> Visita aqui
-                </a>
-            </div>
-        </div>
-    </section>
     <section id="ubicacion" class="py-5">
         <div class="container">
             <h2 class="text-center">Ubicación</h2>
@@ -235,31 +176,122 @@
                     </div>
                 </div>
             </div>
-            <section id="confirmacion" class="py-5 bg-light">
-                <div class="container text-center">
-                    <h2>Asistencia</h2>
-                    <p>Por favor dejanos saber si podras asistir!</p>
-                    <form id="rsvp-form" class="text-left">
-                        <div class="form-group">
-                            <label for="name">Nombre Completo</label>
-                            <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre completo" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="attendance">Asistirás?</label>
-                            <select class="form-control" id="attendance" required>
-                                <option value="">Selecciona una opción</option>
-                                <option value="yes">Sí, asistiré</option>
-                                <option value="no">No, no podré asistir</option>
-                            </select>
-                        </div>
-                        <div class="form-group" id="plus-one-group" style="display: none;">
-                            <label for="plus-one">Nombre del Acompañante</label>
-                            <input type="text" class="form-control" id="plus-one" placeholder="Ingresa el nombre del acompañante">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                    </form>
+    </section>
+    <section id="vestimenta" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Ejemplos de Atuendo</h2>
+            <p class="text-center">Aqui tienes algunos ejemplos de atuendos apropiados para nuestra boda.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="vestimenta-box p-3 mb-3 bg-white rounded shadow-sm text-center">
+                        <img src="path/to/vestimenta1.jpg" class="img-fluid mb-3" alt="Ejemplo 1">
+                        <p>Formal</p>
+                    </div>
                 </div>
-            </section>
+                <div class="col-md-4">
+                    <div class="vestimenta-box p-3 mb-3 bg-white rounded shadow-sm text-center">
+                        <img src="path/to/vestimenta2.jpg" class="img-fluid mb-3" alt="Ejemplo 2">
+                        <p>Semi-Formal</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="vestimenta-box p-3 mb-3 bg-white rounded shadow-sm text-center">
+                        <img src="path/to/vestimenta3.jpg" class="img-fluid mb-3" alt="Ejemplo 3">
+                        <p>Casual Elegante</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>Para más ideas de atuendos, visita nuestro album:</p>
+                <a href="https://www.pinterest.com/yourpinterestlink" class="btn btn-danger" target="_blank">
+                    <i class="fab fa-pinterest"></i> Visita aqui
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="cancion" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Cancion</h2>
+            <p class="text-center">Elige tu cancion.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="song-request-box card shadow-sm text-center">
+                        <div class="card-body">
+                            <img src="notfound.jpg" class="img-fluid mb-3" alt="Album Cover" style="max-height: 200px;">
+                            <p class="card-text">Que cancion no puede faltar?</p>
+                            <input type="text" id="song-input" class="form-control mb-2" placeholder="Ingresa el nombre de la cancion">
+                            <div class="media-controls">
+                                <button id="prev-btn" class="btn btn-outline-primary"><i class="fas fa-step-backward"></i></button>
+                                <button id="play-btn" class="btn btn-primary"><i class="fas fa-play"></i></button>
+                                <button id="next-btn" class="btn btn-outline-primary"><i class="fas fa-step-forward"></i></button>
+                            </div>
+                            <div class="additional-icons mt-3">
+                                <i class="bi bi-headphones"></i>
+                                <i class="bi bi-heart-fill"></i>
+                                <i class="bi bi-share-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="regalos" class="py-5">
+        <div class="gift-section">
+            <h2 class="section-title">Gift Registry</h2>
+            <div class="divider"></div>
+            
+            <div class="gift-content">
+                <p class="gift-intro">
+                    Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift, we would greatly appreciate a monetary contribution toward our new life together.
+                </p>
+                
+                <div class="envelope-icon">✉️</div>
+                
+                <div class="gift-details">
+                    <p>
+                        As we begin our journey together, we're saving for our first home and future adventures. Your generous contribution will help us build the foundation for our married life.
+                    </p>
+                    
+                    <div class="bank-details">
+                        <h3>Banking Details</h3>
+                        <p><strong>Account Name:</strong> John & Jane Smith</p>
+                        <p><strong>Bank:</strong> First National Bank</p>
+                        <p><strong>Account Number:</strong> XXXX-XXXX-XXXX-1234</p>
+                        <p><strong>Routing Number:</strong> 123456789</p>
+                        <p><strong>Reference:</strong> Your Name + Wedding Gift</p>
+                    </div>
+                </div>
+                
+                <p class="thank-you">Thank you for your love and support!</p>
+            </div>
+        </div>
+    </section>
+    <section id="confirmacion" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2>Asistencia</h2>
+            <p>Por favor dejanos saber si podras asistir!</p>
+            <form id="rsvp-form" class="text-left">
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre completo" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="attendance">Asistirás?</label>
+                    <select class="form-control" id="attendance" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="yes">Sí, asistiré</option>
+                        <option value="no">No, no podré asistir</option>
+                    </select>
+                </div>
+                <div class="form-group" id="plus-one-group" style="display: none;">
+                    <label for="plus-one">Nombre del Acompañante</label>
+                    <input type="text" class="form-control" id="plus-one" placeholder="Ingresa el nombre del acompañante">
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

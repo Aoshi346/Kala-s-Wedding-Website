@@ -14,7 +14,6 @@
     <script src="JS/nombre_usuario_personalizado.js" defer></script> 
     <script src="JS/contador_y_ubi.js" defer></script>
     <script src="JS/intersection_observer.js" defer></script>
-    <link rel="preload" href="Images/hero_pag_web.png" as="image"> <!-- Cargamos la imagen del hero antes-->
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -36,13 +35,11 @@
         </div>
     </nav>
     <div class="hero">
-        <img src="Images/fondo_hero_1_big.png" 
-             srcset="Images/fondo_hero_1_small.png 480w,
-                     Images/fondo_hero_1_big.png 1200w" 
-             sizes="(max-width: 600px) 480px, 
-                    (max-width: 900px) 800px, 
-                    1200px" 
-             alt="Hero Image" class="img-fluid">
+        <picture>
+            <source srcset="Images/fondo_hero_1_small.png" media="(max-width: 600px)">
+            <source srcset="Images/fondo_hero_1_big.png" media="(min-width: 601px)">
+            <img src="Images/fondo_hero_1_big.png" alt="Hero Image" class="img-fluid hero-img" loading="lazy">
+        </picture>
     </div>
     <section id="bienvenida" class="countdown-section py-5">
         <div class="container text-center">

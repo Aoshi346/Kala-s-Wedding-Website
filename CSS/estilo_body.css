@@ -159,8 +159,6 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 1.6;
 }
 
-
-
 /*Seccion del slideshow*/
 .slider-container {
 	padding: 2rem;
@@ -192,7 +190,7 @@ h1, h2, h3, h4, h5, h6, p {
 .slider img {
 	flex: 1 0 100%;
 	scroll-snap-align: start;
-	object-fit: cover;
+	object-fit: contain;
 }
 
 .slider-nav {

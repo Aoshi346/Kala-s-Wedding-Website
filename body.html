@@ -260,31 +260,67 @@
             </div>
         </div>
     </section>
-    <section id="confirmacion" class="py-5 bg-light">
-        <div class="container text-center">
-            <h2>Asistencia</h2>
-            <p>Por favor dejanos saber si podras asistir!</p>
-            <form id="rsvp-form" class="text-left">
-                <div class="form-group">
-                    <label for="name">Nombre Completo</label>
-                    <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre completo" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="attendance">Asistirás?</label>
-                    <select class="form-control" id="attendance" required>
-                        <option value="">Selecciona una opción</option>
-                        <option value="yes">Sí, asistiré</option>
-                        <option value="no">No, no podré asistir</option>
-                    </select>
-                </div>
-                <div class="form-group" id="plus-one-group" style="display: none;">
-                    <label for="plus-one">Nombre del Acompañante</label>
-                    <input type="text" class="form-control" id="plus-one" placeholder="Ingresa el nombre del acompañante">
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-        </div>
-    </section>
+    <!-- filepath: /c:/Users/aoshi/OneDrive/Desktop/Coding/Kala's Wedding Website/body.html -->
+<section id="confirmacion" class="py-5 bg-light">
+    <div class="container text-center">
+        <h2>Asistencia</h2>
+        <p>Por favor dejanos saber si podras asistir!</p>
+        <form id="rsvp-form" class="text-left">
+            <div class="form-group">
+                <label for="name">Nombre Completo</label>
+                <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre completo" readonly>
+            </div>
+            <div class="form-group">
+                <label for="attendance">Asistirás?</label>
+                <select class="form-control" id="attendance" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="yes">Sí, asistiré</option>
+                    <option value="no">No, no podré asistir</option>
+                </select>
+            </div>
+            <div class="form-group" id="plus-one-group" style="display: none;">
+                <label for="plus-one">Nombre del Acompañante</label>
+                <input type="text" class="form-control" id="plus-one" placeholder="Ingresa el nombre del acompañante">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var name = document.getElementById('name').value;
+        var attendance = document.getElementById('attendance').value;
+        var plusOne = document.getElementById('plus-one').value;
+
+        var data = {
+            name: name,
+            attendance: attendance,
+            plusOne: plusOne
+        };
+
+        fetch('https://script.google.com/macros/s/AKfycbw7NJk4vdIbcvyBs6i_VMc_rd6B24XY_Tkxj41_IInfB9ZMid-hF8Zyf5rrnDchX6yd/exec', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.status === 'success') {
+                alert('RSVP submitted successfully!');
+            } else {
+                alert('There was an error submitting your RSVP.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error submitting your RSVP.');
+        });
+    });
+</script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

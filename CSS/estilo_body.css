@@ -56,15 +56,39 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /* Seccion del hero */
+/* General styles for the hero section */
 .hero {
-    background-image: url('Images/hero_pag_web.png');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Styles for small devices (up to 600px) */
+@media (max-width: 600px) {
+    .hero img {
+        content: url('Images/fondo_hero_1_small.png');
+    }
+}
+
+/* Styles for medium devices (601px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    .hero img {
+        content: url('Images/fondo_hero_1_big.png');
+    }
+}
+
+/* Styles for large devices (901px and up) */
+@media (min-width: 901px) {
+    .hero img {
+        content: url('Images/fondo_hero_1_big.png');
+    }
 }
 
 /* Contador */

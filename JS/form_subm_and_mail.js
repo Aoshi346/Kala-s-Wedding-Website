@@ -8,21 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const attendance = formData.get('attendance');
         const plusOne = formData.get('plus_one');
 
-        // Prepare the email parameters
-        const emailParams = {
-            name: name,
-            attendance: attendance,
-            plus_one: plusOne
-        };
+        // You can send the form data to your server or handle it as needed
+        console.log('Name:', name);
+        console.log('Attendance:', attendance);
+        console.log('Plus One:', plusOne);
 
-        // Send the email using EmailJS
-        emailjs.send('service_b1x2y2f', 'template_lhwzjfu', emailParams)
-            .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                alert('Formulario enviado con éxito!');
-            }, function(error) {
-                console.log('FAILED...', error);
-                alert('Error al enviar el formulario.');
-            });
+        // Optionally, show a success message or perform other actions
+        alert('Sus respuestas se han enviado con éxito!');
     });
 });

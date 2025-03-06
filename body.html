@@ -265,6 +265,15 @@
         <div class="container text-center">
             <h2>Asistencia</h2>
             <p>Por favor dejanos saber si podras asistir!</p>
+            
+            <div id="success-message" class="alert alert-success" style="display: none;" role="alert">
+                ¡Gracias! Tu respuesta ha sido enviada correctamente.
+            </div>
+            
+            <div id="error-message" class="alert alert-danger" style="display: none;" role="alert">
+                Hubo un error al enviar tu respuesta. Por favor intenta nuevamente.
+            </div>
+            
             <form id="rsvp-form" class="text-left">
                 <div class="form-group">
                     <label for="name">Nombre Completo</label>
@@ -287,10 +296,13 @@
                         <input type="checkbox" id="plus-one-checkbox"> No traeré un acompañante
                     </label>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary" id="submit-button">Enviar</button>
             </form>
         </div>
     </section>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="CSS/estilo_body.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pinyon+Script&display=swap" rel="stylesheet"> <!-- Google Fonts -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script> <!-- Leaflet JS/Mapa -->
-    <script src="JS/nombre_usuario_personalizado.js" defer></script> 
+    <script src="JS/usuarios_y_plusone.js" defer></script> 
     <script src="JS/contador_y_ubi.js" defer></script>
     <script src="JS/intersection_observer.js" defer></script>
     <link rel="preload" href="Images/fondo_hero_1_small.png" as="image">
@@ -267,11 +267,11 @@
             <form id="rsvp-form" class="text-left">
                 <div class="form-group">
                     <label for="name">Nombre Completo</label>
-                    <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre completo" readonly>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa tu nombre completo" readonly>
                 </div>
                 <div class="form-group">
                     <label for="attendance">Asistirás?</label>
-                    <select class="form-control" id="attendance" required>
+                    <select class="form-control" id="attendance" name="attendance" required>
                         <option value="">Selecciona una opción</option>
                         <option value="yes">Sí, asistiré</option>
                         <option value="no">No, no podré asistir</option>
@@ -279,7 +279,12 @@
                 </div>
                 <div class="form-group" id="plus-one-group" style="display: none;">
                     <label for="plus-one">Nombre del Acompañante</label>
-                    <input type="text" class="form-control" id="plus-one" placeholder="Ingresa el nombre del acompañante">
+                    <input type="text" class="form-control" id="plus-one" name="plus_one" placeholder="Ingresa el nombre del acompañante">
+                </div>
+                <div class="form-group" id="plus-one-checkbox-group" style="display: none;">
+                    <label for="plus-one-checkbox">
+                        <input type="checkbox" id="plus-one-checkbox"> No traeré un acompañante
+                    </label>
                 </div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>

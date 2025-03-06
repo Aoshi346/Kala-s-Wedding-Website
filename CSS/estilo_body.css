@@ -363,6 +363,24 @@ h1, h2, h3, h4, h5, h6, p {
     transform: translate(-50%, -50%);
 }
 
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    .timeline-pc {
+        display: block;
+    }
+
+    .timeline-mobile {
+        display: none;
+    }
+}
+
+/*  Estilos Ad. */
+.timeline p {
+    margin: 10px 0 0; 
+    font-size: 16px; 
+    color: #666;
+}
+
 /* Ropa */
 .vestimenta-box {
     transition: transform 0.3s ease;
@@ -698,22 +716,69 @@ h1, h2, h3, h4, h5, h6, p {
     transform: scale(1.1);
 }
 
-
-
-/* Responsividad */
-@media screen and (max-width: 768px) {
-    .timeline-pc {
-        display: block;
-    }
-
-    .timeline-mobile {
-        display: none;
-    }
+/* Style for the plus-one section */
+#plus-one-group {
+    display: none; /* Initially hidden */
+    margin-top: 15px;
 }
 
-/*  Estilos Ad. */
-.timeline p {
-    margin: 10px 0 0; 
-    font-size: 16px; 
-    color: #666;
+#plus-one-checkbox-group {
+    display: none; /* Initially hidden */
+    margin-top: 15px;
 }
+
+#plus-one-group label,
+#plus-one-checkbox-group label {
+    font-weight: bold;
+}
+
+#plus-one-group input,
+#plus-one-checkbox-group input {
+    margin-left: 10px;
+}
+
+#plus-one-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+#plus-one-checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FF69B4; /* Pink border */
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+#plus-one-checkbox-group input[type="checkbox"]:checked {
+    background-color: #FF69B4; /* Pink background when checked */
+    border-color: #FF69B4; /* Pink border when checked */
+}
+
+#plus-one-checkbox-group input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+#plus-one-checkbox-group label {
+    display: flex;
+    align-items: center;
+}
+
+#plus-one-checkbox-group label input {
+    margin-right: 10px;
+}
+

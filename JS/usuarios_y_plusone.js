@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'chack': 'Sr. Ernesto Davila'
     };
 
-    const plusOneAllowed = ['roberto', 'mirowski', 'fabi', 'linares', 'jorge', 'regulo', 'castro', 'zaida', 
+    const plusOneAllowed = ['roberto', 'mirowsky', 'fabi', 'linares', 'jorge', 'regulo', 'castro', 'zaida', 
         'pulitano', 'rondon', 'prado', 'nico', 'perez', 'humberto']; // Add usernames allowed to have a plus one
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -89,14 +89,32 @@ document.addEventListener('DOMContentLoaded', function() {
             nameInput.value = fullName;
         }
 
-        // Show the Plus One box if the user is allowed
+        // Show the Plus One box and checkbox if the user is allowed
+        const plusOneGroup = document.getElementById('plus-one-group');
+        const plusOneCheckboxGroup = document.getElementById('plus-one-checkbox-group');
         if (plusOneAllowed.includes(username.toLowerCase())) {
-            const plusOneGroup = document.getElementById('plus-one-group');
-            if (plusOneGroup) {
+            if (plusOneGroup && plusOneCheckboxGroup) {
                 plusOneGroup.style.display = 'block';
+                plusOneCheckboxGroup.style.display = 'block';
+            }
+        } else {
+            if (plusOneGroup && plusOneCheckboxGroup) {
+                plusOneGroup.style.display = 'none';
+                plusOneCheckboxGroup.style.display = 'none';
             }
         }
     } else {
         personalizedNameElement.textContent = 'Invitado';
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('plus-one-checkbox').addEventListener('change', function() {
+        var plusOneGroup = document.getElementById('plus-one-group');
+        if (this.checked) {
+            plusOneGroup.style.display = 'none';
+        } else {
+            plusOneGroup.style.display = 'block';
+        }
+    });
 });

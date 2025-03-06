@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const plusOneAllowed = ['roberto', 'mirowsky', 'fabi', 'linares', 'jorge', 'regulo', 'castro', 'zaida', 
-        'pulitano', 'rondon', 'prado', 'nico', 'perez', 'humberto']; // Add usernames allowed to have a plus one
+        'pulitano', 'rondon', 'prado', 'nico', 'perez', 'humberto']; //Usuarios que pueden llevar acompañante
 
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get('nombreusuario');
@@ -83,13 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const fullName = guestNames[username.toLowerCase()];
         personalizedNameElement.textContent = fullName;
 
-        // Set the full name in the RSVP form
+        // Ponemos el nombre de usuario en el campo de nombre
         const nameInput = document.getElementById('name');
         if (nameInput) {
             nameInput.value = fullName;
         }
 
-        // Show the Plus One box and checkbox if the user is allowed
+        // Se muestra el box de plus one si el usuario tiene
         const plusOneGroup = document.getElementById('plus-one-group');
         const plusOneCheckboxGroup = document.getElementById('plus-one-checkbox-group');
         if (plusOneAllowed.includes(username.toLowerCase())) {

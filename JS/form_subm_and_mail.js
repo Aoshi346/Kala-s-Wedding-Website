@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorMessage = document.getElementById('error-message');
     const nameInput = document.getElementById('name');
 
+    // Track if the current user is allowed to bring a plus one
+    let isPlusOneAllowed = false;
+
     // Get name from URL parameter if available
     function getNameFromUrl() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -20,11 +23,20 @@ document.addEventListener('DOMContentLoaded', function() {
         if (nameParam) {
             nameInput.value = nameParam;
         }
+        
+        // Check if user is allowed to bring a plus one
+        const username = urlParams.get('nombreusuario');
+        if (username) {
+            const plusOneAllowed = ['roberto', 'mirowsky', 'fabi', 'linares', 'jorge', 'regulo', 'castro', 'zaida', 
+                'pulitano', 'rondon', 'prado', 'nico', 'perez', 'humberto']; // Users allowed to bring a plus one
+            
+            isPlusOneAllowed = plusOneAllowed.includes(username.toLowerCase());
+        }
     }
 
-    // Show/hide plus one fields based on attendance selection
+    // Show/hide plus one fields based on attendance selection AND eligibility
     function handleAttendanceChange() {
-        if (attendanceSelect.value === 'yes') {
+        if (attendanceSelect.value === 'yes' && isPlusOneAllowed) {
             plusOneGroup.style.display = 'block';
             plusOneCheckboxGroup.style.display = 'block';
         } else {
@@ -110,4 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
     attendanceSelect.addEventListener('change', handleAttendanceChange);
     plusOneCheckbox.addEventListener('change', handlePlusOneCheckbox);
     form.addEventListener('submit', handleSubmit);
+    
+    // Initialize the form state based on current attendance value
+    handleAttendanceChange();
 });

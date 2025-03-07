@@ -72,6 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
             plus_one: plusOneCheckbox.checked ? 'Sin acompañante' : (plusOneInput.value || 'No especificado')
         };
 
+        console.log('Sending email with the following parameters:', templateParams);
+
         // Send email using EmailJS
         emailjs.send(
             'service_b1x2y2f', // Replace with your EmailJS service ID

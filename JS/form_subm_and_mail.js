@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    emailjs.init("8nz9xbrjKXoc9pGh2"); // Initialize EmailJS with your public key
+    emailjs.init("8nz9xbrjKXoc9pGh2"); // Se inicia el servicio de EmailJS con nuestra key publica
 
-    // Get DOM elements
+    // Obtenemos los elementos del formulario
     const form = document.getElementById('rsvp-form');
     const attendanceSelect = document.getElementById('attendance');
     const plusOneGroup = document.getElementById('plus-one-group');
@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorMessage = document.getElementById('error-message');
     const nameInput = document.getElementById('name');
 
-    // Track if the current user is allowed to bring a plus one
+    // Confirmamos si el usuario puede llevar un plus one
     let isPlusOneAllowed = false;
 
-    // Get name from URL parameter if available
+    // Obtener el nombre del usuario desde la URL si está presente
     function getNameFromUrl() {
         const urlParams = new URLSearchParams(window.location.search);
         const nameParam = urlParams.get('name');
@@ -24,17 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
             nameInput.value = nameParam;
         }
         
-        // Check if user is allowed to bring a plus one
+        // chequeamos si el usuario puede traer un plus one
         const username = urlParams.get('nombreusuario');
         if (username) {
             const plusOneAllowed = ['roberto', 'mirowsky', 'fabi', 'linares', 'jorge', 'regulo', 'castro', 'zaida', 
-                'pulitano', 'rondon', 'prado', 'nico', 'perez', 'humberto']; // Users allowed to bring a plus one
+                'pulitano', 'rondon', 'prado', 'nico', 'perez', 'humberto']; 
             
             isPlusOneAllowed = plusOneAllowed.includes(username.toLowerCase());
         }
     }
 
-    // Show/hide plus one fields based on attendance selection AND eligibility
+    // Mostramos o escondemos el campo de plus one dependiendo de la respuesta de asistencia
     function handleAttendanceChange() {
         if (attendanceSelect.value === 'yes' && isPlusOneAllowed) {
             plusOneGroup.style.display = 'block';
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Handle plus one checkbox
+    // Mostramos o escondemos el campo de plus one dependiendo de si el usuario selecciona la opción de no llevar acompañante
     function handlePlusOneCheckbox() {
         if (plusOneCheckbox.checked) {
             plusOneInput.value = '';
@@ -59,25 +59,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Handle form submission
+    // Enviamos el formulario
     function handleSubmit(e) {
         e.preventDefault();
         
-        // Validate form
+        // Validacion de campos
         if (!attendanceSelect.value) {
             alert('Por favor selecciona si asistirás o no.');
             return;
         }
 
-        // Disable submit button and show loading state
+        // Deshabilitamos el botón de enviar mientras se envía el email
         submitButton.disabled = true;
         submitButton.textContent = 'Enviando...';
         
-        // Hide any previous messages
+        // ocultamos cualquier mensaje de error o exito previo
         successMessage.style.display = 'none';
         errorMessage.style.display = 'none';
 
-        // Prepare template parameters
+        // Creamos los parametros del email
         const templateParams = {
             name: nameInput.value,
             attendance: attendanceSelect.value === 'yes' ? 'Sí, asistiré' : 'No, no podré asistir',
@@ -86,18 +86,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         console.log('Sending email with the following parameters:', templateParams);
 
-        // Send email using EmailJS
+        // Enviamos el mail con EmailJS
         emailjs.send(
-            'service_b1x2y2f', // Replace with your EmailJS service ID
-            'template_lhwzjfu', // Replace with your EmailJS template ID
+            'service_b1x2y2f',  // ID del servicio
+            'template_lhwzjfu',  // ID de la plantilla del correo
             templateParams
         ).then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             
-            // Show success message
+            // Mostramos mensaje de exito
             successMessage.style.display = 'block';
             
-            // Reset form except for name
+            // Ponemos el formulario en blanco
             attendanceSelect.value = '';
             plusOneInput.value = '';
             plusOneCheckbox.checked = false;
@@ -107,22 +107,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }).catch(function(error) {
             console.log('FAILED...', error);
             
-            // Show error message
+            // Mensaje de error
             errorMessage.style.display = 'block';
             
         }).finally(function() {
-            // Re-enable submit button
+            // Habilitamos el botón de enviar
             submitButton.disabled = false;
             submitButton.textContent = 'Enviar';
         });
     }
 
-    // Add event listeners
+    // añadimos los eventos a los elementos del formulario
     getNameFromUrl();
     attendanceSelect.addEventListener('change', handleAttendanceChange);
     plusOneCheckbox.addEventListener('change', handlePlusOneCheckbox);
     form.addEventListener('submit', handleSubmit);
     
-    // Initialize the form state based on current attendance value
+    // Mostramos u ocultamos el campo de plus one dependiendo de la respuesta de asistencia
     handleAttendanceChange();
 });

@@ -222,16 +222,33 @@
                         <div class="card-body">
                             <img src="notfound.jpg" class="img-fluid mb-3" alt="Album Cover" style="max-height: 200px;">
                             <p class="card-text">Que cancion no puede faltar?</p>
-                            <input type="text" id="song-input" class="form-control mb-2" placeholder="Ingresa el nombre de la cancion">
-                            <div class="media-controls">
-                                <button id="prev-btn" class="btn btn-outline-primary"><i class="fas fa-step-backward"></i></button>
-                                <button id="play-btn" class="btn btn-primary"><i class="fas fa-play"></i></button>
-                                <button id="next-btn" class="btn btn-outline-primary"><i class="fas fa-step-forward"></i></button>
+                            
+                            <!-- Modified to work as a form -->
+                            <form id="song-form">
+                                <div class="form-group">
+                                    <input type="text" id="song-input" name="song" class="form-control mb-2" placeholder="Ingresa el nombre de la cancion" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="song-artist" name="artist" class="form-control mb-2" placeholder="Artista (opcional)">
+                                </div>
+                                <div class="media-controls">
+                                    <button type="button" id="prev-btn" class="btn btn-outline-primary"><i class="fas fa-step-backward"></i></button>
+                                    <button type="submit" id="play-btn" class="btn btn-primary"><i class="fas fa-play"></i> Enviar</button>
+                                    <button type="button" id="next-btn" class="btn btn-outline-primary"><i class="fas fa-step-forward"></i></button>
+                                </div>
+                                <div class="additional-icons mt-3">
+                                    <i class="bi bi-headphones"></i>
+                                    <i class="bi bi-heart-fill"></i>
+                                    <i class="bi bi-share-fill"></i>
+                                </div>
+                            </form>
+                            
+                            <!-- Success and error messages -->
+                            <div id="song-success-message" class="alert alert-success mt-3" style="display: none;" role="alert">
+                                ¡Gracias! Tu canción ha sido registrada.
                             </div>
-                            <div class="additional-icons mt-3">
-                                <i class="bi bi-headphones"></i>
-                                <i class="bi bi-heart-fill"></i>
-                                <i class="bi bi-share-fill"></i>
+                            <div id="song-error-message" class="alert alert-danger mt-3" style="display: none;" role="alert">
+                                Hubo un error al enviar tu canción. Por favor intenta nuevamente.
                             </div>
                         </div>
                     </div>
@@ -302,6 +319,28 @@
             </form>
         </div>
     </section>
+    <section id="comentarios" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center">Comentarios</h2>
+        <form id="comment-form" class="text-center">
+            <div class="form-group">
+                <label for="comment-username">Nombre de Usuario</label>
+                <input type="text" class="form-control" id="comment-username" name="comment-username" readonly>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comentario</label>
+                <textarea class="form-control" id="comment" name="comment" rows="4" placeholder="Escribe tu comentario aquí..." style="resize: none; overflow-y: scroll;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</section>
+<!-- Footer Section -->
+<footer class="py-4 bg-dark text-white">
+    <div class="container text-center">
+        <p>&copy; 2025 Boda Kala y Jose. Todos los derechos reservados.</p>
+    </div>
+</footer>
     <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

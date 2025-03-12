@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
             plus_one: plusOneCheckbox.checked ? 'Sin acompañante' : (plusOneInput.value || 'No especificado')
         };
 
-        console.log('Sending email with the following parameters:', templateParams);
+        console.log('Enviando email con los parametros:', templateParams);
 
         // Enviamos el mail con EmailJS
         emailjs.send(
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const username = urlParams.get('username');
 
         // Send email using EmailJS
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+        emailjs.send('service_b1x2y2f', 'template_lz4v6ew', {
             username: username,
             song: songInput
         })

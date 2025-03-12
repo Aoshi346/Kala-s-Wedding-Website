@@ -847,6 +847,9 @@ h1, h2, h3, h4, h5, h6, p {
     resize: none;
     overflow-y: scroll;
     max-height: 150px; /* Set a max height for the textarea */
+    border-radius: 15px; /* Add rounded corners */
+    max-width: 600px; /* Set a max width */
+    margin: 0 auto; /* Center the text box */
 }
 
 #comentarios button {

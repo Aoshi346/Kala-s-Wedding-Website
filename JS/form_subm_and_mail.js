@@ -125,4 +125,39 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Mostramos u ocultamos el campo de plus one dependiendo de la respuesta de asistencia
     handleAttendanceChange();
+
+    // Handle Song form submission
+    const songForm = document.getElementById('song-form');
+    const playButton = document.getElementById('play-btn');
+    playButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        if (songForm.checkValidity() === false) {
+            event.stopPropagation();
+            songForm.classList.add('was-validated');
+            return;
+        }
+
+        const songInput = document.getElementById('song-input').value.trim();
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+
+        // Send email using EmailJS
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+            username: username,
+            song: songInput
+        })
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            document.getElementById('song-success-message').style.display = 'block';
+            document.getElementById('song-error-message').style.display = 'none';
+        }, function(error) {
+            console.log('FAILED...', error);
+            document.getElementById('song-success-message').style.display = 'none';
+            document.getElementById('song-error-message').style.display = 'block';
+        });
+
+        // Clear the form
+        songForm.reset();
+        songForm.classList.remove('was-validated');
+    });
 });

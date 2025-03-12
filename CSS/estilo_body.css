@@ -390,6 +390,18 @@ h1, h2, h3, h4, h5, h6, p {
     transform: translateY(-5px);
 }
 
+.vestimenta-box img {
+    max-height: 200px; /* Reduce the max height */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+}
+
+.vestimenta-box img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase the shadow on hover */
+}
+
 /* Cancion */
 .song-request-box {
     background-color: rgba(255, 192, 203, 0.15); 
@@ -418,6 +430,18 @@ h1, h2, h3, h4, h5, h6, p {
     outline: none;
 }
 
+.song-request-box img {
+    max-height: 300px; /* Increase the max height */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+}
+
+.song-request-box img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase the shadow on hover */
+}
+
 .media-controls button {
     margin: 0 10px;
     background-color: #FF69B4; 
@@ -431,6 +455,12 @@ h1, h2, h3, h4, h5, h6, p {
 .media-controls button:hover {
     background-color: #FF1493; 
     transform: scale(1.1);
+}
+
+.media-controls button:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: #FF69B4; /* Ensure the background color stays consistent */
 }
 
 .additional-icons i {

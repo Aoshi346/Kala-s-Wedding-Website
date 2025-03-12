@@ -31,7 +31,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="#bienvenida">Bienvenida</a></li>
                 <li class="nav-item"><a class="nav-link" href="#historia">Nuestra Historia</a></li>
-                <li class="nav-item"><a class="nav-link" href="#ubicacion">Ubicacion</a></li>
+                <li class="nav-item"><a class="nav-link" href="#ubicacion">Detalles</a></li>
                 <li class="nav-item"><a class="nav-link" href="#timeline">Cronograma</a></li>
                 <li class="nav-item"><a class="nav-link" href="#vestimenta">Codigo de Vestimenta</a></li>
                 <li class="nav-item"><a class="nav-link" href="#cancion">Canciones</a></li>
@@ -80,9 +80,9 @@
         <section class="slider-container">
             <div class="slider-wrapper">
                 <div class="slider">
-                    <img id="slide-1" src="Images/foto1.JPG" alt="foto 1 del slideshow" />
-                    <img id="slide-2" src="Images/foto2.JPG" alt="foto 2 del slideshow" />
-                    <img id="slide-3" src="Images/foto3.JPG" alt="foto 3 del slideshow" />
+                    <img id="slide-1" src="Images/foto1.jpeg" alt="foto 1 del slideshow" />
+                    <img id="slide-2" src="Images/foto2.jpeg" alt="foto 2 del slideshow" />
+                    <img id="slide-3" src="Images/foto3.jpeg" alt="foto 3 del slideshow" />
                 </div>
                 <div class="slider-nav">
                     <a href="#slide-1"></a>
@@ -94,7 +94,7 @@
     </section>
     <section id="ubicacion" class="py-5">
         <div class="container">
-            <h2 class="text-center">Ubicación</h2>
+            <h2 class="text-center">Detalles del Evento</h2>
             <p class="text-center">Aquí puedes ver la ubicación de la ceremonia y la recepción.</p>
             <div class="row">
                 <div class="col-md-6">
@@ -120,8 +120,7 @@
     </section>
     <section id="timeline" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center">Cronograma de la Boda</h2>
-            <p class="text-center">Aquí está el cronograma del día de nuestra boda.</p>
+            <h2 class="text-center">Timeline</h2>
             <div class="timeline timeline-pc">
                 <div class="timeline-item">
                     <div class="timeline-content">
@@ -183,33 +182,27 @@
     </section>
     <section id="vestimenta" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center">Ejemplos de Atuendo</h2>
-            <p class="text-center">Aqui tienes algunos ejemplos de atuendos apropiados para nuestra boda.</p>
-            <div class="row">
+            <h2 class="text-center">Dress Code</h2>
+            <p class="text-center">Formal</p>
+            <div class="row justify-content-center">
                 <div class="col-md-4">
                     <div class="vestimenta-box p-3 mb-3 bg-white rounded shadow-sm text-center">
-                        <img src="path/to/vestimenta1.jpg" class="img-fluid mb-3" alt="Ejemplo 1">
-                        <p>Formal</p>
+                        <img src="../Images/atuendo_hombre.png" class="img-fluid mb-3" alt="Vestimenta Hombre">
+                        <p>Hombre</p>
+                        <a href="https://www.pinterest.com/kalanysanz/c%C3%B3digo-de-vestimenta-men/?invite_code=c10502e43da14de2ba9fb49de88a8b58&sender=555561441441136742" class="btn btn-danger mt-2" target="_blank">
+                            <i class="fab fa-pinterest"></i> Ver inspiración 
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="vestimenta-box p-3 mb-3 bg-white rounded shadow-sm text-center">
-                        <img src="path/to/vestimenta2.jpg" class="img-fluid mb-3" alt="Ejemplo 2">
-                        <p>Semi-Formal</p>
+                        <img src="../Images/atuendo_mujer.png" class="img-fluid mb-3" alt="Vestimenta Mujer">
+                        <p>Mujer</p>
+                        <a href="https://www.pinterest.com/kalanysanz/c%C3%B3digo-de-vestimenta-women/?invite_code=dc46168371bd443ab3d16842cd004c5a&sender=555561441441136742" class="btn btn-danger mt-2" target="_blank">
+                            <i class="fab fa-pinterest"></i> Ver inspiración
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="vestimenta-box p-3 mb-3 bg-white rounded shadow-sm text-center">
-                        <img src="path/to/vestimenta3.jpg" class="img-fluid mb-3" alt="Ejemplo 3">
-                        <p>Casual Elegante</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-4">
-                <p>Para más ideas de atuendos, visita nuestro album:</p>
-                <a href="https://www.pinterest.com/yourpinterestlink" class="btn btn-danger" target="_blank">
-                    <i class="fab fa-pinterest"></i> Visita aqui
-                </a>
             </div>
         </div>
     </section>
@@ -220,29 +213,26 @@
                 <div class="col-md-8 col-lg-6">
                     <div class="song-request-box card shadow-sm text-center">
                         <div class="card-body">
-                            <img src="notfound.jpg" class="img-fluid mb-3" alt="Album Cover" style="max-height: 200px;">
+                            <img src="../Images/album_photo.jpeg" class="img-fluid mb-3" alt="Album Cover" style="max-height: 300px;">
                             <p class="card-text">Que cancion no puede faltar?</p>
-                            
-                            <!-- Modified to work as a form -->
-                            <form id="song-form">
+                            <form id="song-form" class="text-center needs-validation" novalidate>
                                 <div class="form-group">
                                     <input type="text" id="song-input" name="song" class="form-control mb-2" placeholder="Ingresa el nombre de la cancion" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" id="song-artist" name="artist" class="form-control mb-2" placeholder="Artista (opcional)">
-                                </div>
-                                <div class="media-controls">
-                                    <button type="button" id="prev-btn" class="btn btn-outline-primary"><i class="fas fa-step-backward"></i></button>
-                                    <button type="submit" id="play-btn" class="btn btn-primary"><i class="fas fa-play"></i> Enviar</button>
-                                    <button type="button" id="next-btn" class="btn btn-outline-primary"><i class="fas fa-step-forward"></i></button>
-                                </div>
-                                <div class="additional-icons mt-3">
-                                    <i class="bi bi-headphones"></i>
-                                    <i class="bi bi-heart-fill"></i>
-                                    <i class="bi bi-share-fill"></i>
+                                    <div class="invalid-feedback">
+                                        Por favor ingresa el nombre de la canción.
+                                    </div>
                                 </div>
                             </form>
-                            
+                            <div class="media-controls mt-3">
+                                <button id="prev-btn" class="btn btn-outline-primary"><i class="fas fa-step-backward"></i></button>
+                                <button id="play-btn" class="btn btn-primary"><i class="fas fa-play"></i></button>
+                                <button id="next-btn" class="btn btn-outline-primary"><i class="fas fa-step-forward"></i></button>
+                            </div>
+                            <div class="additional-icons mt-3">
+                                <i class="bi bi-headphones"></i>
+                                <i class="bi bi-heart-fill"></i>
+                                <i class="bi bi-share-fill"></i>
+                            </div>
                             <!-- Success and error messages -->
                             <div id="song-success-message" class="alert alert-success mt-3" style="display: none;" role="alert">
                                 ¡Gracias! Tu canción ha sido registrada.
@@ -255,10 +245,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
     <section id="regalos" class="py-5">
         <div class="gift-section">
-            <h2 class="section-title">Regalos</h2>
+            <h2 class="section-title">Mesa de Regalos</h2>
             <div class="divider"></div>
             <div class="gift-content">
                 <p class="gift-intro">
@@ -267,9 +257,6 @@
                     <img src="Images/icono_regalo.png" alt="Icono de Regalo" class="img-fluid">
                 </div>
                 <div class="gift-details">
-                    <p>
-                        As we begin our journey together, we're saving for our first home and future adventures. Your generous contribution will help us build the foundation for our married life.
-                    </p>
                     <div class="bank-details">
                         <h3>Datos bancarios</h3>
                         <p><strong><i class="fas fa-university"></i> Zelle:</strong> jgmijares25@gmail.com</p>
@@ -282,8 +269,8 @@
     </section>
     <section id="confirmacion" class="py-5 bg-light">
         <div class="container text-center">
-            <h2>Asistencia</h2>
-            <p>Por favor dejanos saber si podras asistir!</p>
+            <h2>RSVP</h2>
+            <p>Es muy importante para nosotros contar con tu confirmación de asistencia</p>
             
             <div id="success-message" class="alert alert-success" style="display: none;" role="alert">
                 ¡Gracias! Tu respuesta ha sido enviada correctamente.

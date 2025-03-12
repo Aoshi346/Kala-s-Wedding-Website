@@ -71,3 +71,21 @@ document.addEventListener('DOMContentLoaded', function() {
         .bindPopup('Lugar de la recepción')
         .openPopup();
 });
+
+// Script para el slider
+
+document.addEventListener("DOMContentLoaded", function() {
+    const slider = document.querySelector('.slider');
+    const slides = slider.querySelectorAll('img');
+    let currentIndex = 0;
+
+    function showNextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        slider.scrollTo({
+            left: slider.clientWidth * currentIndex,
+            behavior: 'smooth'
+        });
+    }
+
+    setInterval(showNextSlide, 3000); // Change slide every 3 seconds
+});

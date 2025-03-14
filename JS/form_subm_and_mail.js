@@ -126,13 +126,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mostramos u ocultamos el campo de plus one dependiendo de la respuesta de asistencia
     handleAttendanceChange();
 
-    // Handle Song form submission
+    // Form del campo de la canción
     const songForm = document.getElementById('song-form');
     const playButton = document.getElementById('play-btn');
     
-    // Prevent default form submission on Enter
+    // Prevenimos el envío del formulario al presionar el botón de enter
     songForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent page reload
+        event.preventDefault(); // Prevenimos que la pag. se recargue
     });
     
     playButton.addEventListener('click', function(event) {
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const urlParams = new URLSearchParams(window.location.search);
         const username = urlParams.get('nombreusuario'); 
 
-        // Send email using EmailJS
+        // Enviamos el Mail
         emailjs.send('service_b1x2y2f', 'template_lz4v6ew', {
             username: username,
             song: songInput
@@ -162,7 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('song-error-message').style.display = 'block';
         });
 
-        // Clear the form
         songForm.reset();
         songForm.classList.remove('was-validated');
     });

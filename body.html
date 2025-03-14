@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pinyon+Script&display=swap" rel="stylesheet"> <!-- Google Fonts -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script> <!-- Leaflet JS/Mapa -->
     <script src="JS/usuarios_y_plusone.js" defer></script> 
+    <script src="JS/hero_plusone.js" defer></script>
     <script src="JS/contador_y_ubi.js" defer></script>
     <script src="JS/intersection_observer.js" defer></script>
     <script src="JS/form_subm_and_mail.js" defer></script>
@@ -42,9 +43,9 @@
     </nav>
     <div class="hero">
         <picture>
-            <source srcset="Images/fondo_hero_1_small.png" media="(max-width: 600px)">
-            <source srcset="Images/fondo_hero_1_big.png" media="(min-width: 601px)">
-            <img src="Images/fondo_hero_1_big.png" alt="Hero Image" class="img-fluid hero-img" loading="lazy">
+            <source id="hero-image-small" srcset="Images/fondo_hero_1_small.png" media="(max-width: 600px)">
+            <source id="hero-image-big" srcset="Images/fondo_hero_1_big.png" media="(min-width: 601px)">
+            <img  id="hero-image" src="Images/fondo_hero_1_big.png" alt="Hero Image" class="img-fluid hero-img" loading="lazy">
         </picture>
     </div>
     <section id="bienvenida" class="countdown-section py-5">

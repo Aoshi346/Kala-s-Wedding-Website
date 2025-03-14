@@ -129,6 +129,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle Song form submission
     const songForm = document.getElementById('song-form');
     const playButton = document.getElementById('play-btn');
+    
+    // Prevent default form submission on Enter
+    songForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent page reload
+    });
+    
     playButton.addEventListener('click', function(event) {
         event.preventDefault();
         if (songForm.checkValidity() === false) {
@@ -139,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const songInput = document.getElementById('song-input').value.trim();
         const urlParams = new URLSearchParams(window.location.search);
-        const username = urlParams.get('username');
+        const username = urlParams.get('nombreusuario'); 
 
         // Send email using EmailJS
         emailjs.send('service_b1x2y2f', 'template_lz4v6ew', {

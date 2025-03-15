@@ -342,22 +342,40 @@
         </div>
     </section>
     <section id="comentarios" class="py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center">Comentarios</h2>
-        <form id="comment-form" class="text-center">
-            <div class="form-group">
-                <textarea class="form-control" id="comment" name="comment" rows="4" placeholder="Escribe tu comentario aquí..." style="resize: none; overflow-y: scroll;"></textarea>
+        <div class="container text-center">
+            <h2>Dejanos tus comentarios</h2>
+            <p>Comparte tus buenos deseos y mensajes para los novios</p>
+            
+            <div id="comment-success" class="alert alert-success" style="display: none;" role="alert" aria-live="polite">
+                ¡Gracias! Tu mensaje ha sido enviado correctamente.
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
-    </div>
-</section>
-<!-- Footer Seccion -->
-<footer class="py-4 bg-dark text-white">
-    <div class="container text-center">
-        <p>&copy; 2025 Boda Kala y Jose. Todos los derechos reservados.</p>
-    </div>
-</footer>
+            
+            <div id="comment-error" class="alert alert-danger" style="display: none;" role="alert" aria-live="polite">
+                Hubo un error al enviar tu mensaje. Por favor intenta nuevamente.
+            </div>
+            
+            <form id="comment-form" class="text-left needs-validation" novalidate>
+                <div class="form-group mb-4">
+                    <textarea class="form-control" id="comment" name="comment" rows="4" placeholder="Escribe tu mensaje para los novios..." required></textarea>
+                    <div class="invalid-feedback">Por favor escribe un mensaje</div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit-comment">
+                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                    <span class="button-text">Enviar mensaje</span>
+                </button>
+            </form>
+            
+            <div id="comments-list" class="comments-list mt-5">
+                <!-- Comments will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+    <!-- Footer Seccion -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container text-center">
+            <p>&copy; 2025 Boda Kala y Jose. Todos los derechos reservados.</p>
+        </div>
+    </footer>
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" async></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

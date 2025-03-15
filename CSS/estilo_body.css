@@ -25,33 +25,195 @@ h1, h2, h3, h4, h5, h6, p {
 /* Estilo de la Navbar */
 .navbar {
     background-color: rgba(0, 0, 0, 0.7) !important;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    min-height: 70px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.navbar-brand, .nav-link {
-    color: #fff !important;
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-right: 2rem;
+    position: relative;
+}
+
+/* Logo del navbar */
+.website-logo {
+    height: 45px;
+    width: 45px;
+    object-fit: contain;
+    display: block;
+    margin-right: 12px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .website-logo {
+    transform: scale(1.05);
+}
+
+.navbar-brand span {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    letter-spacing: 0.3px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #FF69B4;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    opacity: 0;
 }
 
 .nav-link:hover {
     color: #FF69B4 !important;
 }
 
-/* Logo del navbar */
-.website-logo {
-    height: 40px; 
-    width: auto;
-    margin-right: 10px; 
-    vertical-align: middle; 
+.nav-link:hover::after {
+    width: 70%;
+    opacity: 1;
 }
 
-/* Responsividad  */
-@media screen and (max-width: 768px) {
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+    top: 8px;
+}
+
+.navbar-toggler-icon::after {
+    bottom: 8px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 50%;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    bottom: 50%;
+}
+
+/* Responsividad Navbar */
+@media screen and (max-width: 991px) {
     .navbar {
-        background-color: rgba(0, 0, 0, 0.9) !important;
+        padding: 0.5rem 1rem;
     }
 
     .website-logo {
-        height: 30px; /* se ajusta la altura para dipositivos moviles */
+        height: 40px;
+        width: 40px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.2rem;
+    }
+
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.95);
+        margin-top: 0.5rem;
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-item {
+        margin: 0.5rem 0;
+    }
+
+    .nav-link {
+        padding: 0.75rem 1rem;
+        text-align: center;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-link:hover {
+        background-color: rgba(255, 105, 180, 0.1);
+        border-radius: 4px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .website-logo {
+        height: 35px;
+        width: 35px;
+        margin-right: 8px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.1rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
     }
 }
 

@@ -2,13 +2,35 @@
 body {
     font-family: 'Montserrat', sans-serif;
     color: #333;
-    background-image: url('../Images/fondo_crema.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #fff5f7, #ffe4e9);
     line-height: 1.6;
     letter-spacing: 0.3px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    background: rgba(255, 192, 203, 0.15);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    width: 300px;
+    height: 400px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::before {
+    top: -200px;
+    right: -100px;
+    transform: rotate(45deg);
+}
+
+body::after {
+    bottom: -200px;
+    left: -100px;
+    transform: rotate(-135deg);
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -315,7 +337,7 @@ h1, h2, h3, h4, h5, h6, p {
         transform: rotate(-45deg);
     }
 
-    /* Rest of the mobile menu styles */
+    /* Estilo de Dip. Moviles */
     .navbar-collapse {
         background-color: rgba(0, 0, 0, 0.95);
         margin: 0.75rem -1rem -0.5rem;
@@ -542,14 +564,21 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .btn-map {
-    background-color: #228B22;
+    background-color: #FCD3D9;
     color: #fff;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(252, 211, 217, 0.3);
 }
 
 .btn-map:hover {
-    background-color: #185418;
+    background-color: #f8a0ad;
     color: #fff;
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(252, 211, 217, 0.4);
 }
 
 /* Timeline */
@@ -768,16 +797,26 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .vestimenta-box .btn-danger {
-    background: linear-gradient(145deg, #FF69B4, #FF1493);
+    background-image: linear-gradient(to right, #FCD3D9 0%, #ffb6c1 51%, #FCD3D9 100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px rgba(252, 211, 217, 0.3);
+    border-radius: 10px;
+    display: block;
     border: none;
-    position: relative;
-    z-index: 1;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .vestimenta-box .btn-danger:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 20, 147, 0.3);
+    box-shadow: 0 4px 12px rgba(252, 211, 217, 0.4);
 }
 
 #vestimenta {
@@ -1140,7 +1179,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .divider::before,
 .divider::after {
-    content: "♥";
+    content: "";
     position: absolute;
     top: -12px;
     color: var(--dark-pink);
@@ -1492,7 +1531,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 #rsvp-form button {
-    background-color: #FF69B4; 
+    background-color: #FCD3D9; 
     border: none;
     color: white;
     padding: 10px 20px;
@@ -1501,7 +1540,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 #rsvp-form button:hover {
-    background-color: #FF1493; 
+    background-color: #f8a0ad; 
     transform: scale(1.1);
 }
 
@@ -1610,7 +1649,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 #comentarios button {
-    background-color: #FF69B4; 
+    background-color: #FCD3D9; 
     border: none;
     color: white;
     padding: 10px 20px;
@@ -1619,11 +1658,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 #comentarios button:hover {
-    background-color: #FF1493; 
+    background-color: #f8a0ad; 
     transform: scale(1.1);
 }
 
-/* Footer Section */
+/* Seccion Footer */
 .footer {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95));
     color: #fff;

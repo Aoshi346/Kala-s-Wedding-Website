@@ -37,7 +37,6 @@ function validarUsuario() {
         'castro': 'Sra. Mailyn Castro',
         'zaida': 'Sra. Zaida',
         'pulitano': 'Sr. Giuseppe Pulitano',
-        'yhol': 'Srta. Yholcris Roa',
         'yholy': 'Sra. Yholymar Roa',
         'fran': 'Sr. Francisco Pinto',
         'valero': 'Sr. Carlos Valero',

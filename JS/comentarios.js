@@ -8,58 +8,58 @@ document.addEventListener('DOMContentLoaded', function() {
     const spinnerElement = submitButton.querySelector('.spinner-border');
     const buttonText = submitButton.querySelector('.button-text');
 
-    // Handle form submission
+    // Manejar el envío del formulario
     commentForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Validate form
+        // Validar el formulario
         if (!commentInput.value.trim()) {
             commentForm.classList.add('was-validated');
             return;
         }
 
-        // Disable submit button and show spinner
+        // Deshabilitar el botón de envío y mostrar el spinner
         submitButton.disabled = true;
         spinnerElement.classList.remove('d-none');
         buttonText.textContent = 'Enviando...';
 
-        // Hide any previous messages
+        // Ocultar cualquier mensaje anterior
         successMessage.style.display = 'none';
         errorMessage.style.display = 'none';
 
-        // Get username from URL
+        // Obtener el nombre de usuario desde la URL
         const urlParams = new URLSearchParams(window.location.search);
         const username = urlParams.get('nombreusuario');
 
-        // Create email parameters
+        // Crear parámetros de correo electrónico
         const templateParams = {
             username: username,
             comment: commentInput.value.trim()
         };
 
-        // Send email using EmailJS
+        // Enviar correo electrónico usando EmailJS
         emailjs.send(
-            'service_b1x2y2f',  // Service ID
-            'template_lz4v6ew',  // Template ID - using the same template as song form for now
+            'service_2okcumj',  // ID del servicio
+            'template_hiuzzun',  // ID del template 
             templateParams
         ).then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             
-            // Show success message
+            
             successMessage.style.display = 'block';
             
-            // Clear form
+            
             commentInput.value = '';
             commentForm.classList.remove('was-validated');
             
         }).catch(function(error) {
             console.log('FAILED...', error);
             
-            // Show error message
+            
             errorMessage.style.display = 'block';
             
         }).finally(function() {
-            // Re-enable submit button and hide spinner
+            // Re-habilitar el botón de envío y ocultar el spinner
             submitButton.disabled = false;
             spinnerElement.classList.add('d-none');
             buttonText.textContent = 'Enviar mensaje';

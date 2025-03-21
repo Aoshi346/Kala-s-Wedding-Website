@@ -36,6 +36,7 @@ function validarUsuario() {
         'zaida': 'Sra. Zaida',
         'pulitano': 'Sr. Giuseppe Pulitano',
         'yholy': 'Sra. Yholymar Roa',
+        'yhol': 'Srta. Yholcris Roa',
         'valero': 'Sr. Carlos Valero',
         'majo': 'Srta. Maria Jose Sanchez',
         'diaz': 'Familia Diaz Barrios',
@@ -48,20 +49,15 @@ function validarUsuario() {
         'gatenio': 'Familia Gatenio Sayageh', /* 5 invitados */
         'larnia': 'Sra. Angelica Larnia & Familia',
         'french': 'Sra. Virginia French & Familia',
-        'bottom': 'Sr. Daniel Bottom & Familia',
+        'botton': 'Sr. Daniel Botton & Familia',
         'ramos': 'Sr. Sandro Ramos & Familia',
         'jacobo': 'Sr. Jacobo De Leon & Familia',
         'alejandro': 'Sr. Alejandro Uzcategui',
         'uzcategui': 'Sr. Carlos Uzcategui & Srta. Valentina Sandoval',
         'nico': 'Sr. Nicolas Matheou',
         'perez': 'Sr. Aaron Perez',
-        'mich': 'Sra. Michelle Benitez & Familia',
+        'benitez': 'Sra. Michelle Benitez & Familia',
         'humberto': 'Sr. Humberto Lamanna',
-        'zuleima': 'Sra. Zuleima Mijares',
-        'sorlene': 'Sra. Sorlene Mijares',
-        'zuleica': 'Sra. Zuleica Mijares',
-        'soeli': 'Sra. Soeli Mijares',
-        'yorja': 'Sr. Yorja Mijares',
         'montesinos': 'Familia Montesinos Sanchéz', /* 3 invitados */
     }; // Listado de los invitados
 

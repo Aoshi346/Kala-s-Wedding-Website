@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    emailjs.init("8nz9xbrjKXoc9pGh2"); // Se inicia el servicio de EmailJS con nuestra key publica
+    emailjs.init("ejEUVDFQBqoAiKtY1"); // Se inicia el servicio de EmailJS con nuestra key publica
 
     // Obtenemos los elementos del formulario
     const form = document.getElementById('rsvp-form');
@@ -88,8 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Enviamos el mail con EmailJS
         emailjs.send(
-            'service_b1x2y2f',  // ID del servicio
-            'template_lhwzjfu',  // ID de la plantilla del correo
+            'service_2okcumj',  // ID del servicio
+            'template_se9gxoi',  // ID de la plantilla del correo
             templateParams
         ).then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const username = urlParams.get('nombreusuario'); 
 
         // Enviamos el Mail
-        emailjs.send('service_b1x2y2f', 'template_lz4v6ew', {
+        emailjs.send('service_2okcumj', 'template_hiuzzun', {
             username: username,
             song: songInput
         })

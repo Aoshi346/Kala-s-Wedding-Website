@@ -33,7 +33,7 @@ function validarUsuario() {
         'regulo': 'Sr. Regulo De Pablos',
         'pulido': 'Familia Pulido Mendez', /*3 invitados */
         'castro': 'Sra. Mailyn Castro',
-        'zaida': 'Sra. Zaida',
+        'zaida': 'Sra. Zaida Toro',
         'pulitano': 'Sr. Giuseppe Pulitano',
         'yholy': 'Sra. Yholymar Roa',
         'yhol': 'Srta. Yholcris Roa',
@@ -41,7 +41,7 @@ function validarUsuario() {
         'majo': 'Srta. Maria Jose Sanchez',
         'diaz': 'Familia Diaz Barrios',
         'chopite': 'Sra. Vicmer Chopite',
-        'rondon': 'Familia Rondon',
+        'rondon': 'Sra. Yanatha & Familia',
         'rivas': 'Sra. Bellamelys Rivas',
         'dipentima': 'Sr. Walter & Claudia Di Pentima',
         'prado': 'Nayoli Prado',
@@ -59,6 +59,7 @@ function validarUsuario() {
         'benitez': 'Sra. Michelle Benitez & Familia',
         'humberto': 'Sr. Humberto Lamanna',
         'montesinos': 'Familia Montesinos Sanchéz', /* 3 invitados */
+        'delcorral': 'Sr. Juan Del Corral'
     }; // Listado de los invitados
 
     const usernameInput = document.getElementById('nombreusuario').value.toLowerCase(); // Obtener el valor del input y convertirlo a minúsculas

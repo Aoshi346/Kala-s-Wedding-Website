@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'regulo': 'Sr. Regulo De Pablos',
         'pulido': 'Familia Pulido Mendez', /*3 invitados */
         'castro': 'Sra. Mailyn Castro',
-        'zaida': 'Sra. Zaida',
+        'zaida': 'Sra. Zaida Toro',
         'pulitano': 'Sr. Giuseppe Pulitano',
         'yholy': 'Sra. Yholymar Roa',
         'yhol': 'Srta. Yholcris Roa',
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'majo': 'Srta. Maria Jose Sanchez',
         'diaz': 'Familia Diaz Barrios',
         'chopite': 'Sra. Vicmer Chopite',
-        'rondon': 'Familia Rondon',
+        'rondon': 'Sra. Yanatha & Familia',
         'rivas': 'Sra. Bellamelys Rivas',
         'dipentima': 'Sr. Walter & Claudia Di Pentima',
         'prado': 'Nayoli Prado',
@@ -59,12 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
         'benitez': 'Sra. Michelle Benitez & Familia',
         'humberto': 'Sr. Humberto Lamanna',
         'montesinos': 'Familia Montesinos Sanchéz', /* 3 invitados */
+        'delcorral': 'Sr. Juan Del Corral'
     };
 
     const plusOneAllowed = ['roberto', 'mirowsky', 'fabi', 'linares','castro', 'zaida', 
             'pulitano', 'rondon', 'prado', 'nico', 'perez', 'humberto', 'grillo', 'prince', 'grecia', 
             'ainara', 'bela', 'peca', 'diaz', 'dipentima', 'larnia', 'french', 'botton','ramos', 'jacobo',
-            'uzcategui', 'alejandro', 'mich', 'casale']; //Usuarios que pueden llevar acompañante
+            'uzcategui', 'alejandro', 'mich', 'casale', 'serafini', 'benitez']; //Usuarios que pueden llevar acompañante
 
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get('nombreusuario');

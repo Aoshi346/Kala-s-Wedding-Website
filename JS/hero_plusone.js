@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
         'ainara', 'bela', 'peca', 'diaz', 'dipentima', 'larnia', 'french', 'botton','ramos', 'jacobo',
         'uzcategui', 'alejandro', 'mich'];
 
-    const threeGuestsAllowed = ['sascha', 'guillermo', 'escobar', 'jon', 'pulido', 'montesinos'];
-    const fiveGuestsAllowed = ['gatenio'];
+    const threeGuestsAllowed = ['sascha', 'guillermo', 'escobar', 'jon', 'pulido', 'montesinos']; // Add the usernames that should have 3 guests
+    const fiveGuestsAllowed = ['gatenio']; // Add the usernames that should have 5 guests
 
     // Verificar el tipo de acceso del usuario
     let guestType = 'default';
@@ -43,15 +43,30 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Seleccionar las imagenes basado en el tipo de acceso
+    // Preload only the relevant images
     const selectedImages = images[guestType];
+    const preloadImages = [
+        selectedImages.small,
+        selectedImages.big
+    ];
+
+    // Create and append preload links
+    preloadImages.forEach(imageUrl => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = imageUrl;
+        document.head.appendChild(link);
+    });
 
     // Actualizar las imagenes del hero
     const heroImageSmall = document.getElementById('hero-image-small');
     const heroImageBig = document.getElementById('hero-image-big');
     const heroImage = document.getElementById('hero-image');
 
-    heroImageSmall.srcset = selectedImages.small;
-    heroImageBig.srcset = selectedImages.big;
-    heroImage.src = selectedImages.big;
+    if (heroImageSmall && heroImageBig && heroImage) {
+        heroImageSmall.srcset = selectedImages.small;
+        heroImageBig.srcset = selectedImages.big;
+        heroImage.src = selectedImages.big;
+    }
 });

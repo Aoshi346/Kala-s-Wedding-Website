@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    emailjs.init("ejEUVDFQBqoAiKtY1"); // Se inicia el servicio de EmailJS con nuestra key publica
+    // Initialize EmailJS with a delay to ensure proper loading
+    setTimeout(() => {
+        emailjs.init("ejEUVDFQBqoAiKtY1");
+    }, 1000);
 
     // Obtenemos los elementos del formulario
     const form = document.getElementById('rsvp-form');
@@ -64,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Enviamos el formulario
     function handleSubmit(e) {
         e.preventDefault();
+        e.stopPropagation();
         
         // Validacion de campos
         if (!attendanceSelect.value) {
@@ -73,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Deshabilitamos el botón de enviar mientras se envía el email
         submitButton.disabled = true;
-        submitButton.textContent = 'Enviando...';
+        submitButton.querySelector('.button-text').textContent = 'Enviando...';
         
         // ocultamos cualquier mensaje de error o exito previo
         successMessage.style.display = 'none';
@@ -85,8 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
             attendance: attendanceSelect.value === 'yes' ? 'Sí, asistiré' : 'No, no podré asistir',
             plus_one: plusOneCheckbox.checked ? 'Sin acompañante' : (plusOneInput.value || 'No especificado')
         };
-
-        console.log('Enviando email con los parametros:', templateParams);
 
         // Enviamos el mail con EmailJS
         emailjs.send(
@@ -115,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }).finally(function() {
             // Habilitamos el botón de enviar
             submitButton.disabled = false;
-            submitButton.textContent = 'Enviar';
+            submitButton.querySelector('.button-text').textContent = 'Enviar';
         });
     }
 
@@ -134,11 +136,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Prevenimos el envío del formulario al presionar el botón de enter
     songForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevenimos que la pag. se recargue
+        event.preventDefault();
+        event.stopPropagation();
     });
     
     playButton.addEventListener('click', function(event) {
         event.preventDefault();
+        event.stopPropagation();
+        
         if (songForm.checkValidity() === false) {
             event.stopPropagation();
             songForm.classList.add('was-validated');
@@ -158,13 +163,12 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('SUCCESS!', response.status, response.text);
             document.getElementById('song-success-message').style.display = 'block';
             document.getElementById('song-error-message').style.display = 'none';
+            songForm.reset();
+            songForm.classList.remove('was-validated');
         }, function(error) {
             console.log('FAILED...', error);
             document.getElementById('song-success-message').style.display = 'none';
             document.getElementById('song-error-message').style.display = 'block';
         });
-
-        songForm.reset();
-        songForm.classList.remove('was-validated');
     });
 });

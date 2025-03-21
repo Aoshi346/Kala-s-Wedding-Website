@@ -84,10 +84,26 @@ document.addEventListener('DOMContentLoaded', function() {
         // Se muestra el box de plus one si el usuario tiene
         const plusOneGroup = document.getElementById('plus-one-group');
         const plusOneCheckboxGroup = document.getElementById('plus-one-checkbox-group');
+        const attendanceSelect = document.getElementById('attendance');
+        
         if (plusOneAllowed.includes(username.toLowerCase())) {
             if (plusOneGroup && plusOneCheckboxGroup) {
-                plusOneGroup.style.display = 'block';
-                plusOneCheckboxGroup.style.display = 'block';
+                // Initially hide both elements
+                plusOneGroup.style.display = 'none';
+                plusOneCheckboxGroup.style.display = 'none';
+                
+                // Add event listener to show/hide based on attendance
+                if (attendanceSelect) {
+                    attendanceSelect.addEventListener('change', function() {
+                        if (this.value === 'yes') {
+                            plusOneGroup.style.display = 'block';
+                            plusOneCheckboxGroup.style.display = 'block';
+                        } else {
+                            plusOneGroup.style.display = 'none';
+                            plusOneCheckboxGroup.style.display = 'none';
+                        }
+                    });
+                }
             }
         } else {
             if (plusOneGroup && plusOneCheckboxGroup) {

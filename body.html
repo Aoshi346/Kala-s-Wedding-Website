@@ -9,6 +9,68 @@
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="Images/sello_con_monograma.png">
     <title>Matrimonio Mijares Sanz</title>
+    <!-- Script to set initial hero image -->
+    <script>
+        // Get username from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('nombreusuario');
+        
+        // Define guest types
+        const plusOneAllowed = ['roberto', 'mirowsky', 'fabi', 'linares','castro', 'zaida', 
+            'pulitano', 'rondon', 'prado', 'nico', 'perez', 'humberto', 'grillo', 'prince', 'grecia', 
+            'ainara', 'bela', 'peca', 'diaz', 'dipentima', 'larnia', 'french', 'botton','ramos', 'jacobo',
+            'uzcategui', 'alejandro', 'mich'];
+        const threeGuestsAllowed = ['sascha', 'guillermo', 'escobar', 'jon', 'pulido', 'montesinos'];
+        const fiveGuestsAllowed = ['gatenio'];
+
+        // Determine guest type
+        let guestType = 'default';
+        if (username) {
+            if (fiveGuestsAllowed.includes(username.toLowerCase())) {
+                guestType = 'fiveGuests';
+            } else if (threeGuestsAllowed.includes(username.toLowerCase())) {
+                guestType = 'threeGuests';
+            } else if (plusOneAllowed.includes(username.toLowerCase())) {
+                guestType = 'plusOne';
+            }
+        }
+
+        // Set initial image sources
+        const images = {
+            fiveGuests: {
+                small: 'Images/fondo_hero_5guests_small.png',
+                big: 'Images/fondo_hero_5guests_big.png'
+            },
+            threeGuests: {
+                small: 'Images/fondo_hero_3guests_small.png',
+                big: 'Images/fondo_hero_3guests_big.png'
+            },
+            plusOne: {
+                small: 'Images/fondo_hero_plusone_small.png',
+                big: 'Images/fondo_hero_plusone_big.png'
+            },
+            default: {
+                small: 'Images/fondo_hero_1_small.png',
+                big: 'Images/fondo_hero_1_big.png'
+            }
+        };
+
+        const selectedImages = images[guestType];
+        
+        // Preload the correct images
+        const preloadImages = [
+            selectedImages.small,
+            selectedImages.big
+        ];
+
+        preloadImages.forEach(imageUrl => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = imageUrl;
+            document.head.appendChild(link);
+        });
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://stackpath.bootstrapcdn.com">
@@ -70,9 +132,21 @@
         <picture>
             <source id="hero-image-small" srcset="Images/fondo_hero_1_small.png" media="(max-width: 600px)">
             <source id="hero-image-big" srcset="Images/fondo_hero_1_big.png" media="(min-width: 601px)">
-            <img  id="hero-image" src="Images/fondo_hero_1_big.png" alt="Hero Image" class="img-fluid hero-img" loading="lazy">
+            <img id="hero-image" src="Images/fondo_hero_1_big.png" alt="Hero Image" class="img-fluid hero-img" loading="lazy">
         </picture>
     </div>
+    <script>
+        // Set initial image sources based on guest type
+        const heroImageSmall = document.getElementById('hero-image-small');
+        const heroImageBig = document.getElementById('hero-image-big');
+        const heroImage = document.getElementById('hero-image');
+
+        if (heroImageSmall && heroImageBig && heroImage) {
+            heroImageSmall.srcset = selectedImages.small;
+            heroImageBig.srcset = selectedImages.big;
+            heroImage.src = selectedImages.big;
+        }
+    </script>
     <section id="bienvenida" class="countdown-section py-5">
         <div class="container text-center">
             <h2>Bienvenido <span id='personalized-name'></span></h2>

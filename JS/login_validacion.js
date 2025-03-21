@@ -14,7 +14,7 @@ function validarUsuario() {
         'casale': 'Familia Casale Rojas',
         'loredeishon': 'Srta. Loredana Casale',
         'fabi': 'Srta. Fabiana Bianco',
-        'nico': 'Srta. Nicole Hernandez',
+        'nicole': 'Srta. Nicole Hernandez',
         'mac': 'Sr. Alejandro Macari',
         'grecia': 'Srta. Grecia Pumar & Sr. Miguel Zajía',
         'ainara': 'Srta. Ainara De Iribar & Sr. Pedro Jaime',

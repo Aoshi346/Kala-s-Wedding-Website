@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const musicControl = document.getElementById('toggle-music');
     const musicIcon = musicControl.querySelector('i');
     
-    // Set initial volume
+    // Ponemos el volumen al 30%
     audio.volume = 0.3;
 
-    // Function to handle music toggle
+    // Función para manejar el toggle de la música
     function toggleMusic() {
         if (audio.paused) {
             audio.play();
@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Only attach click event to the music control button
+    // Solo adjuntamos el evento click al botón de control de música
     musicControl.addEventListener('click', function(e) {
         e.preventDefault();
         toggleMusic();
     });
 
-    // Function to start playing music
+    // Función para iniciar la reproducción de la música
     function startMusic() {
         audio.play()
             .then(() => {
@@ -37,17 +37,17 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => {
                 console.log("Autoplay prevented by browser. Please click to play.");
-                // Show visual indication that music needs to be started manually
+                // Mostramos una indicación visual de que la música necesita ser iniciada manualmente
                 musicIcon.classList.remove('fa-music');
                 musicIcon.classList.add('fa-volume-mute');
                 musicControl.classList.remove('playing');
             });
     }
 
-    // Try to start music immediately
+    // Intentamos iniciar la música inmediatamente
     startMusic();
 
-    // Also try to start music on first user interaction with the page
+    // También intentamos iniciar la música en la primera interacción del usuario con la página
     const startMusicOnce = () => {
         startMusic();
         document.removeEventListener('click', startMusicOnce);
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('touchstart', startMusicOnce);
     document.addEventListener('keydown', startMusicOnce);
 
-    // Handle visibility change to pause/resume music
+    // Manejamos el cambio de visibilidad para pausar/reanudar la música
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
             audio.pause();

@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'majo': 'Srta. Maria Jose Sanchez',
         'diaz': 'Familia Diaz Barrios',
         'chopite': 'Sra. Vicmer Chopite',
-        'rondon': 'Sra. Yanatha & Familia',
+        'rondon': 'Sra. Yanatha Rondon & Familia',
         'rivas': 'Sra. Bellamelys Rivas',
         'dipentima': 'Sr. Walter & Claudia Di Pentima',
         'prado': 'Nayoli Prado',

@@ -9,13 +9,12 @@
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="Images/sello_con_monograma.png">
     <title>Matrimonio Mijares Sanz</title>
-    <!-- Script to set initial hero image -->
+    <!-- Script para determinar el tipo de usuario -->
     <script>
-        // Get username from URL
+        // Obtener el nombre de usuario desde la URL
         const urlParams = new URLSearchParams(window.location.search);
         const username = urlParams.get('nombreusuario');
         
-        // Define guest types
         const plusOneAllowed = ['roberto', 'mirowsky', 'fabi', 'linares','castro', 'zaida', 
             'pulitano', 'rondon', 'prado', 'nico', 'perez', 'humberto', 'grillo', 'prince', 'grecia', 
             'ainara', 'bela', 'peca', 'diaz', 'dipentima', 'larnia', 'french', 'botton','ramos', 'jacobo',
@@ -23,7 +22,6 @@
         const threeGuestsAllowed = ['sascha', 'guillermo', 'escobar', 'jon', 'pulido', 'montesinos'];
         const fiveGuestsAllowed = ['gatenio'];
 
-        // Determine guest type
         let guestType = 'default';
         if (username) {
             if (fiveGuestsAllowed.includes(username.toLowerCase())) {
@@ -35,7 +33,7 @@
             }
         }
 
-        // Set initial image sources
+        // Establecer las fuentes de imagenes iniciales
         const images = {
             fiveGuests: {
                 small: 'Images/fondo_hero_5guests_small.png',
@@ -57,7 +55,6 @@
 
         const selectedImages = images[guestType];
         
-        // Preload the correct images
         const preloadImages = [
             selectedImages.small,
             selectedImages.big
@@ -83,7 +80,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pinyon+Script&display=swap" rel="stylesheet"> <!-- Google Fonts -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script> <!-- Leaflet JS/Mapa -->
     <script src="JS/usuarios_y_plusone.js" defer></script> 
-    <script src="JS/hero_plusone.js" defer></script>
     <script src="JS/contador_y_ubi.js" defer></script>
     <script src="JS/intersection_observer.js" defer></script>
     <script src="JS/form_subm_and_mail.js" defer></script>
@@ -136,7 +132,7 @@
         </picture>
     </div>
     <script>
-        // Set initial image sources based on guest type
+        // Establecer las fuentes de imagenes iniciales basado en el tipo de usuario
         const heroImageSmall = document.getElementById('hero-image-small');
         const heroImageBig = document.getElementById('hero-image-big');
         const heroImage = document.getElementById('hero-image');

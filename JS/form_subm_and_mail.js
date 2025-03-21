@@ -27,8 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // chequeamos si el usuario puede traer un plus one
         const username = urlParams.get('nombreusuario');
         if (username) {
-            const plusOneAllowed = ['roberto', 'mirowsky', 'fabi', 'linares', 'jorge', 'regulo', 'castro', 'zaida', 
-                'pulitano', 'rondon', 'prado', 'nico', 'perez', 'humberto']; 
+            const plusOneAllowed = ['roberto', 'mirowsky', 'fabi', 'linares','castro', 'zaida', 
+                'pulitano', 'rondon', 'prado', 'nico', 'perez', 'humberto', 'grillo', 'prince', 'grecia', 
+                'ainara', 'bela', 'peca', 'diaz', 'dipentima', 'larnia', 'french', 'botton','ramos', 'jacobo',
+                'uzcategui', 'alejandro', 'mich', 'casale', 'serafini', 'benitez'];
             
             isPlusOneAllowed = plusOneAllowed.includes(username.toLowerCase());
         }

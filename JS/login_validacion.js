@@ -46,7 +46,7 @@ function validarUsuario() {
         'dipentima': 'Sr. Walter & Claudia Di Pentima',
         'prado': 'Nayoli Prado',
         'serafini': 'Sr. Gino Serafini',
-        'gatenio': 'Familia Gatenio Sayageh', /* 5 invitados */
+        'gatenio': 'Familia Gatenio Sayegh', /* 5 invitados */
         'larnia': 'Sra. Angelica Larnia & Familia',
         'french': 'Sra. Virginia French & Familia',
         'botton': 'Sr. Daniel Botton & Familia',

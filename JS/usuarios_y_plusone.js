@@ -60,7 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'humberto': 'Sr. Humberto Lamanna',
         'montesinos': 'Familia Montesinos Sanchéz', /* 3 invitados */
         'delcorral': 'Sr. Juan Del Corral',
-        'maria': 'Sra. María Gisela González'
+        'maria': 'Sra. María Gisela González',
+        'ani': 'Sra. Ani Mendez'
     };
 
     const plusOneAllowed = ['roberto', 'mirowsky', 'fabi', 'linares','castro', 'zaida', 

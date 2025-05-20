@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const plusOneAllowed = ['roberto', 'mirowsky', 'fabi', 'linares','castro', 'zaida', 
             'pulitano', 'rondon', 'prado', 'nico', 'perez', 'humberto', 'grillo', 'prince', 'grecia', 
             'ainara', 'bela', 'peca', 'diaz', 'dipentima', 'larnia', 'french', 'botton','ramos', 'jacobo',
-            'uzcategui', 'alejandro', 'mich', 'casale', 'serafini', 'benitez']; //Usuarios que pueden llevar acompañante
+            'uzcategui', 'alejandro', 'mich', 'casale', 'serafini', 'benitez', 'ani']; //Usuarios que pueden llevar acompañante
 
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get('nombreusuario');

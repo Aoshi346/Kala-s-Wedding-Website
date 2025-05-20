@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const plusOneAllowed = ['roberto', 'mirowsky', 'fabi', 'linares','castro', 'zaida', 
                 'pulitano', 'rondon', 'prado', 'nico', 'perez', 'humberto', 'grillo', 'prince', 'grecia', 
                 'ainara', 'bela', 'peca', 'diaz', 'dipentima', 'larnia', 'french', 'botton','ramos', 'jacobo',
-                'uzcategui', 'alejandro', 'mich', 'casale', 'serafini', 'benitez'];
+                'uzcategui', 'alejandro', 'mich', 'casale', 'serafini', 'benitez', 'ani'];
             
             isPlusOneAllowed = plusOneAllowed.includes(username.toLowerCase());
         }

@@ -61,7 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'montesinos': 'Familia Montesinos Sanchéz', /* 3 invitados */
         'delcorral': 'Sr. Juan Del Corral',
         'maria': 'Sra. María Gisela González',
-        'ani': 'Sra. Ani Mendez'
+        'ani': 'Sra. Ani Mendez',
+        'gebran': 'Sr. Carlos Gebran'
     };
 
     const plusOneAllowed = ['roberto', 'mirowsky', 'fabi', 'linares','castro', 'zaida', 

@@ -61,7 +61,8 @@ function validarUsuario() {
         'montesinos': 'Familia Montesinos Sanchéz', /* 3 invitados */
         'delcorral': 'Sr. Juan Del Corral',
         'maria': 'Sra. María Gisela González',
-        'ani': 'Sra. Ani Mendez'
+        'ani': 'Sra. Ani Mendez',
+        'gebran': 'Sr. Carlos Gebran'
     }; // Listado de los invitados
 
     const usernameInput = document.getElementById('nombreusuario').value.toLowerCase(); // Obtener el valor del input y convertirlo a minúsculas
